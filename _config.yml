@@ -1,10 +1,10 @@
 # Site settings
 title: Quantarium
 email: admin@quantarium.co
-url: https://example.github.io
+url: http://quantarium.co/
 description: "Quantarium Studios Officail Website. Work In Progress"
 keywords: "your keywords, separated by commas"
-skills: "| EVERY GAME HAS ITS QUARKS |"
+skills: "EVERY GAME HAS ITS QUARKS"
 meta_author: Perry Jacob
 
 # Google webmaster tools
@@ -25,17 +25,15 @@ disqus_shortname: myshortname
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
-  primary: aaff0f #80B3FF
+  primary: aaff0f #aaff0f
   primary-rgb: "170, 255, 15" #"128,179,255"
-  secondary: 2c3e50 #FD6E8A
-  secondary-dark: 233140 #A2122F
+  secondary: cccccc #FD6E8A
+  secondary-dark: 333333 #A2122F
 
 # Footer settings
 footer:
-  copyright: Quantarium Studios 2017
-  location: Location
+  copyright: Quantarium Studios
   social: Around the Web
-  credits: Credits
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
@@ -51,12 +49,8 @@ social:
     url: http://github.com/jekyll
 
 # Postal address (add as many lines as necessary)
-address:
-  - line: Everywhere
-  - line: And Nowhere
 
 # Credits content
-credits: ''
 
 # Build settings
 markdown: kramdown
