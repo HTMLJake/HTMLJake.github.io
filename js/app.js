@@ -17,7 +17,7 @@ $(img).hover(function () {
     bodymovin.play();
 }, function () {
     bodymovin.setDirection(1);
-    PlayAnimation();
+    bodymovin.play();
 });
 
 PlayAnimation();
