@@ -129,7 +129,7 @@ body, html {
     transform: rotate(45deg) translate(-7px, -7px);
 }
 
-@media not all and (hover: none) {
+@media screen and (min-width: 800) {
     /* -> on Hover */
     
     .hamburger:hover .bar:nth-child(2) {
