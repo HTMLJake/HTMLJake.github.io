@@ -30,6 +30,7 @@ body, html {
 
 @media screen and (max-width: 400px) {
     .main.open {
+        opacity: 0.5;
         width: 100vw;
         transform: translate(0px, 0px);
         transition: 0.7s;
@@ -40,7 +41,8 @@ body, html {
 /* Main Content */
 
 .title {
-    color: #e2e2e2;
+    display: flex;
+    color: #ffffff;
     width: calc(100% - 20px);
     height: calc(10% - 20px);
     min-height: 30px;
@@ -49,6 +51,8 @@ body, html {
     align-items: center;
     background-color:#333333;
 }
+
+
 
 .map {
     height: calc(90% - 20px);
@@ -61,17 +65,17 @@ body, html {
 /* Sidebar */
 
 .sidebar {
-    color: #e2e2e2;
-    width: calc(250px - 20px);
-    height:  calc(100vh - 20px);
-    padding: 10px;
+    color: #ffffff;
+    width: calc(250px);
+    height: calc(100vh);
     justify-content: center;
-    background-color:#1aaaff;
+    background-color: #292929;
     position: relative;
     float: left;
     transform: translate(-290px, 0px);
     transition: 0.5s;
     z-index: 5;
+    overflow: scroll;
 }
 
 .sidebar.open {
@@ -81,16 +85,24 @@ body, html {
 
 /* Sidebar Content */
 
+.sidebar-header {
+    width: calc(100% - 20px);
+    padding: 10px;
+    background: #1aaaff;
+}
+
 .list {
+    margin: 0;
+    padding: 0px 0px;
     list-style: none;
     width: 90%;
 }
 
 .list-item {
-    margin: 0px 7px;
-    padding: 10px;
+    width: calc(100% - 5px);
+    margin: 0px;
+    padding: 15px 10px;
     cursor: pointer;
-
 }
 
 /* Hamburger Menu Default */
@@ -129,7 +141,7 @@ body, html {
     transform: rotate(45deg) translate(-7px, -7px);
 }
 
-@media (min-width: 800) {
+@media not all and (hover: none) {
     /* -> on Hover */
     
     .hamburger:hover .bar:nth-child(2) {
@@ -165,12 +177,18 @@ body, html {
     }
 
     .list-item:hover {
-        background: linear-gradient(90deg, #1aaaff, #2485bd);
+        background: #212121;
         border-right: 10px solid #2485bd;
     }
 }
 
 .list-item.selected {
-    background: linear-gradient(90deg, #1aaaff, #2485bd);
-    border-right: 10px solid #fafafa;
+    background-color: #212121;
+    border-right: 10px solid #1aaaff;
+}
+
+
+.select {
+    width: 90%;
+    background: #fafafa;
 }
