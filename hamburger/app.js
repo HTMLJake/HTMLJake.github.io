@@ -1,12 +1,11 @@
 /* Variables */
 let infoWindow = new google.maps.InfoWindow();
-let markerJSON = [];
-let prevSelection;
-let listenedMap;
 let mapScript = document.getElementsByTagName('script');
-let map;
-let markers = [];
 let ulElem = window.document.getElementById("list");
+let locations = [];
+let markers = [];
+let prevSelection;
+let map;
 
 
 /* Events */
@@ -33,7 +32,7 @@ function SidebarSelection(item) {
         if(prevSelection === item) {
             item.classList.toggle("selected");
             prevSelection = undefined;
-            ShowAllListings();
+            ShowSelectedListings(ulElem.childNodes);
         } else {
             prevSelection.classList.toggle("selected");
             item.classList.toggle("selected");
@@ -76,24 +75,21 @@ function ShowSelectedListings(item) {
     for (let i = 0; i < markers.length; i++) {
         markers[i].setMap(null);
     }
-
     
     //then only set the selected markers maps
-    if (typeof item  === "object") {
-        console.log("Array");
-        for (const _item of item) {
-            console.log(markers[getMarkerIndex(_item)]);
+    if (item[0]) {
+        for (let i = 1; i < item.length; i++) {
+            let _item = item[i];
             markers[getMarkerIndex(_item)].setMap(map);
-            _Bounds.extend(markers[getMarkerIndex(_item)].position)
+            _Bounds.extend(markers[getMarkerIndex(_item)].position);
+            map.fitBounds(_Bounds);
         }
     } else {
-        console.log("Not Array");
         markers[getMarkerIndex(item)].setMap(map);
-        _Bounds.getMarkerIndex(markers[getIndex(item)].position);
-        map.setZoom(13);
+        _Bounds.extend(markers[getMarkerIndex(item)].position);
+        map.fitBounds(_Bounds);
+        map.setZoom(12);
     }
-    
-    map.fitBounds(_Bounds);
 }
 
 function ShowAllListings(item) {
@@ -114,9 +110,9 @@ function initMap() {
     fetch('http://jperrydev.com/locations.json').then((response) => {
         return response.json();
     }).then((json) => {
-        markerJSON = json;
-        for (let i = 0; i < markerJSON.length; i++) {
-            const marker = markerJSON[i];
+        locations = json;
+        for (let i = 0; i < locations.length; i++) {
+            const marker = locations[i];
             var m = new google.maps.Marker({
                 position: marker.pos,
                 title: marker.name,
@@ -141,29 +137,29 @@ function pushMarker(m) {
 
 function fillSidebar(filter) {
 
-    let newList = markerJSON;
+    let newList = locations;
     
     if (filter !== "all") {
-        newList = markerJSON.filter(item => {
+        newList = locations.filter(item => {
             return item.tags.includes(filter);
         })
     }
 
     
-    let listParentElement = window.document.getElementById("list");    
-    listParentElement.innerHTML = ' ';
+    let ulElem = window.document.getElementById("list");    
+    ulElem.innerHTML = ' ';
     
     
     for (let i = 0; i < newList.length; i++) {
-        markers[i].setMap(map);
+        //markers[i].setMap(map);
         const marker = newList[i];
         let listItem = window.document.createElement("li");
         listItem.textContent = marker.name;
         listItem.classList.add("list-item");
         listItem.setAttribute("onclick", "SidebarSelection(this)")
-        listParentElement.appendChild(listItem);
+        ulElem.appendChild(listItem);
     }
-    ShowSelectedListings(listParentElement.childNodes);
+    ShowSelectedListings(ulElem.childNodes);
 }
 
 function populateInfoWindow(marker, infowindow) {

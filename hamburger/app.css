@@ -75,9 +75,8 @@ body, html {
     transform: translate(-290px, 0px);
     transition: 0.5s;
     z-index: 5;
-    overflow: scroll;
+    overflow-y: auto;
 }
-
 .sidebar.open {
     transform: translate(0px, 0px);
     transition: 0.35s;
