@@ -98,7 +98,7 @@ h3 {
     text-align: center;
 }
 
-#resume-title {
+.resume-title {
     align-self: center;
     font-size: 1.5em;
     font-family: "comfortaa";
@@ -112,7 +112,7 @@ h3 {
     text-align: left;
 }
 
-#resume-name {
+.resume-name {
     font-size: 3em;
 }
 

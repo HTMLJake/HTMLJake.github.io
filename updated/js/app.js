@@ -25,7 +25,7 @@ $('.nav-link').click(function (e) {
     if (target.length) {
         var scrollTo = target.offset().top;
         $('html, body').animate({
-            scrollTop: (scrollTo - 50) + 'px'
+            scrollTop: scrollTo + 'px'
         }, 1250);
     }
 });
