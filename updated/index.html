@@ -12,6 +12,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="css/hamburger.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Jacob Perry Resume</title>
 </head>
@@ -40,6 +41,37 @@
             </li>
         </ul>
     </nav>
+
+    <div class="mobile-nav">
+        <div id="hamburger" class="hamburger" onclick="toggleSidebar(this)">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div id="sidebar"class="sidebar">
+            <ul class="nav nav-pills flex-column" id="navId">
+                <li class="nav-item mx-auto">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item mx-auto">
+                    <a href="#resume" class="nav-link">Resume</a>
+                </li>
+                <li class="nav-item mx-auto">
+                    <a href="#frontend-dev" class="nav-link">Web Developer</a>
+                </li>
+                <li class="nav-item mx-auto">
+                    <a href="#graphic-design" class="nav-link">Graphic Design</a>
+                </li>
+                <li class="nav-item mx-auto">
+                    <a href="#photography" class="nav-link">Photography</a>
+                </li>
+                <li class="nav-item mx-auto">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
 
 
     <section class="header" id="home">
