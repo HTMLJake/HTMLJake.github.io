@@ -1,0 +1,114 @@
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+
+/* Sidebar */
+
+.sidebar {
+    color: $light;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    background-color: $light;
+    position: fixed;
+    float: left;
+    transform: translate(-100vw, 0px);
+    transition: 0.5s;
+    z-index: 50;
+    overflow-y: auto;
+    padding: 75px 15px 15px 15px;
+    text-align: center;
+}
+.sidebar.open {
+    transform: translate(0px, 0px);
+    transition: 0.35s;
+}
+
+/* Sidebar Content */
+
+.list {
+    margin: 0;
+    padding: 0px 0px;
+    list-style: none;
+    width: 90%;
+}
+
+.list-item {
+    width: calc(100% - 5px);
+    margin: 0px;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+/* Hamburger Menu Default */
+
+.hamburger {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 51;
+    cursor: pointer;
+}
+
+.bar {
+    transition: 0.5s;
+    margin: 5px;
+    height: 5px;
+    width: 30px;
+    background-color: $dark;
+}
+
+
+
+/* X on open */
+
+.open .bar:nth-child(2) {
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.open .bar:first-child {
+    transition: 0.5s;
+    transform: rotate(-45deg) translate(-7px, 7px);
+}
+
+.open .bar:last-child {
+    transition: 0.5s;
+    transform: rotate(45deg) translate(-7px, -7px);
+}
+
+.open:hover .bar:nth-child(2) {
+    transition: 0.5s;
+    opacity: 1;
+}
+
+.open:hover .bar:first-child {
+    transition: 0.5s;
+    transform: rotate(-45deg) translate(-9px, -4px) scale(0.75, 1);
+}
+
+.open:hover .bar:last-child {
+    transition: 0.5s;
+    transform: rotate(45deg) translate(-9px, 4px) scale(0.75, 1);
+}
+
+.list-item:hover {
+    background: #212121;
+    border-right: 10px solid #2485bd;
+}
+
+
+.list-item.selected {
+    background-color: #212121;
+    border-right: 10px solid #1aaaff;
+}
+
+
+.select {
+    width: 90%;
+    background: #fafafa;
+}
+
+@media (min-width: 825px) {
+    .mobile-nav {
+        display: none;
+    }
+}

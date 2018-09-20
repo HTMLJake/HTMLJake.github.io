@@ -1,0 +1,294 @@
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Knewave|Russo+One|Space+Mono|Montserrat:300,400,500,600,700');
+
+$designer-font: "knewave",
+sans-serif;
+$primary-font: "Montserrat",
+sans-serif;
+$primary: #33ACE0;
+$light: #F8F9FA;
+$red: #B54042;
+$none: rgba(0, 0, 0, 0);
+
+html,
+body {
+    font-family: $primary-font;
+    font-weight: 700;
+}
+
+.nav-pills .nav-link {
+    border-bottom: 5px solid $none;
+    border-radius: 0px;
+    color: $dark;
+}
+
+.nav-pills .nav-link.active {
+    background-color: $none;
+    border-color: $primary;
+    color: $dark;
+}
+
+.nav-pills .nav-link:hover {
+    border-bottom: 5px solid $primary;
+    border-radius: 0px;
+}
+
+
+.nav {
+    transition: .5s;
+    z-index: 100;
+    max-width: 800px;
+    align-items: center;
+}
+
+.desktop-nav {
+    transition: .5s;
+    width: 100%;
+    height: 71px;
+    position: fixed;
+    top: 20px;
+    right: 0px;
+    display: flex;
+    z-index: 50;
+}
+
+a {
+    color: #fafafa;
+}
+
+a:hover {
+    color: #cacaca;
+}
+
+p {
+    text-align: center;
+    color: #fafafa;
+}
+
+section {
+    /* display: flex; */
+    position: relative;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.header-title {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    //justify-content: center;
+    flex-direction: column;
+
+    h1 {
+        font-size: 10vw;
+        //padding: 0px .5em;
+    }
+}
+
+#logo {
+    min-width: 100px;
+    width: 15%;
+    justify-content: center;
+}
+
+.jp-logo {
+    fill: none;
+    stroke: $primary;
+    stroke-linecap: round;
+    stroke-width: 50px;
+}
+
+
+.header {
+
+    display: flex;
+    //justify-content: center;
+    //align-items: center;
+    padding-top: 95px;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.bkg {
+    background: url('../img/header-background.jpg');
+    background-color: $primary;
+    background-position: 50% 50%;
+    opacity: 0.2;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.gray {
+    background: $dark;
+}
+
+.blue {
+    background: $primary;
+}
+
+.red {
+    background: $red;
+}
+
+.white {
+    background: $light;
+}
+
+.background {
+    background-color: $dark;
+    transition: .5s;
+    top: 0px;
+}
+
+.transition-img {
+    z-index: 15;
+    position: absolute;
+    width: 100%;
+    bottom: -1px;
+}
+
+.spacer {
+    height: 100px;
+    width: 100%;
+}
+
+h3 {
+    color: $primary;
+    text-align: center;
+    size: 5vw;
+    letter-spacing: 5px;
+    font-weight: 500;
+}
+
+.resume-title {
+    align-self: center;
+    font-size: 1.5em;
+    font-family: "comfortaa";
+    margin: 15px;
+    font-weight: 800;
+}
+
+#web-title {
+    align-self: center;
+    font-family: "Space Mono";
+    text-align: left;
+}
+
+.resume-name {
+    font-size: 3em;
+}
+
+#resume-img {
+    height: 250px;
+}
+
+.intro {
+    padding: 50px;
+    padding-bottom: 75px;
+    font-size: 1.15em;
+}
+
+.section-img {
+    display: flex;
+}
+
+#header-text {
+    width: auto;
+    font-size: 1.5em;
+    padding: 50px;
+    padding-bottom: 150px;
+    text-align: center;
+    font-family: "comfortaa";
+    font-weight: 800;
+    color: #fafafa;
+}
+
+#resume-button {
+    margin-bottom: 150px;
+    padding: 15px 25px;
+}
+
+@media (max-width: 825px) {
+    .desktop-nav {
+        display: none;
+    }
+}
+
+
+
+/* Blinking Cursor code from Artem Gordinsky on codepen*/
+
+.blinking-cursor {
+    font-weight: 100;
+    font-size: 30px;
+    color: #fafafa;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        color: transparent;
+    }
+
+    50% {
+        color: #fafafa;
+    }
+}
+
+@-moz-keyframes blink {
+
+    from,
+    to {
+        color: transparent;
+    }
+
+    50% {
+        color: #fafafa;
+    }
+}
+
+@-webkit-keyframes blink {
+
+    from,
+    to {
+        color: transparent;
+    }
+
+    50% {
+        color: #fafafa;
+    }
+}
+
+@-ms-keyframes blink {
+
+    from,
+    to {
+        color: transparent;
+    }
+
+    50% {
+        color: #fafafa;
+    }
+}
+
+@-o-keyframes blink {
+
+    from,
+    to {
+        color: transparent;
+    }
+
+    50% {
+        color: #fafafa;
+    }
+}

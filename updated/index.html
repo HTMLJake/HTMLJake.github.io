@@ -19,25 +19,25 @@
 
 <body>
     <!-- Nav tabs -->
-    <nav>
+    <nav class="desktop-nav">
         <ul class="nav nav-pills mx-auto" id="navId">
             <li class="nav-item mx-auto">
-                <a href="#home" class="nav-link active">Home</a>
+                <a href="" class="nav-link active">Home</a>
             </li>
             <li class="nav-item mx-auto">
-                <a href="#resume" class="nav-link">Resume</a>
+                <a href="pages/resume.html" class="nav-link">Resume</a>
             </li>
             <li class="nav-item mx-auto">
-                <a href="#frontend-dev" class="nav-link">Web Developer</a>
+                <a href="/frontend-dev" class="nav-link">Web Developer</a>
             </li>
             <li class="nav-item mx-auto">
-                <a href="#graphic-design" class="nav-link">Graphic Design</a>
+                <a href="/graphic-design" class="nav-link">Graphic Design</a>
             </li>
             <li class="nav-item mx-auto">
-                <a href="#photography" class="nav-link">Photography</a>
+                <a href="/photography" class="nav-link">Photography</a>
             </li>
             <li class="nav-item mx-auto">
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="/contact" class="nav-link">Contact</a>
             </li>
         </ul>
     </nav>
@@ -48,175 +48,48 @@
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
-        <div id="sidebar"class="sidebar">
+        <div id="sidebar" class="sidebar">
             <ul class="nav nav-pills flex-column" id="navId">
                 <li class="nav-item mx-auto">
-                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="" class="nav-link active">Home</a>
                 </li>
                 <li class="nav-item mx-auto">
-                    <a href="#resume" class="nav-link">Resume</a>
+                    <a href="/resume" class="nav-link">Resume</a>
                 </li>
                 <li class="nav-item mx-auto">
-                    <a href="#frontend-dev" class="nav-link">Web Developer</a>
+                    <a href="/frontend-dev" class="nav-link">Web Developer</a>
                 </li>
                 <li class="nav-item mx-auto">
-                    <a href="#graphic-design" class="nav-link">Graphic Design</a>
+                    <a href="/graphic-design" class="nav-link">Graphic Design</a>
                 </li>
                 <li class="nav-item mx-auto">
-                    <a href="#photography" class="nav-link">Photography</a>
+                    <a href="/photography" class="nav-link">Photography</a>
                 </li>
                 <li class="nav-item mx-auto">
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="/contact" class="nav-link">Contact</a>
                 </li>
             </ul>
         </div>
     </div>
 
+    <div class="bkg"></div>
 
+    <div class="header" id="home">
+        <div class="header-title">
+            <svg id="logo" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+                <title>JP Logo</title>
+                <path class="jp-logo" d="M39.66,287.07a95.52,95.52,0,0,0,183.1,54.48l54.48-183.1a95.52,95.52,0,1,1,64.31,118.79" />
+            </svg>
+            <h2>Hello, my name is</h2>
+            <h1>Jacob Perry</h1>
+            <h3>I like to create things</h3>
 
-    <section class="header" id="home">
-        <div class="spacer"></div>
-        <svg id="logo" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-            <defs>
-                <style>
-                    .cls-1 {
-                        fill: none;
-                        stroke: #fff;
-                        stroke-linecap: round;
-                        stroke-width: 50px;
-                    }
-                </style>
-            </defs>
-            <title>JP Logo</title>
-            <path class="cls-1" d="M39.66,287.07a95.52,95.52,0,0,0,183.1,54.48l54.48-183.1a95.52,95.52,0,1,1,64.31,118.79" />
-        </svg>
-
-        <h2 id="header-text">Hi There, I don't think we have met before.
-            <br> Well if you are here then you must want to know about me.
-            <br> So lets get started!</h2>
-
-        <img src="img/Mountains.png" alt="pixel transition" class="transition-img">
-    </section>
-    <section class="gray" id="resume">
-        <div class="container">
-            <div class="spacer"></div>
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-2 section-img">
-                    <img src="img/ResumeDesign.png" class="mx-auto" alt="Vector Resume Design" id="resume-img">
-                </div>
-                <div class="col-lg-1"></div>
-                <h3 class="resume-title col-lg-6">Hello, My Name is
-                    <br/>
-                    <span class="resume-name"> Jacob Perry </span>
-                    <br/> Your Next Employee</h3>
-                <div class="col-lg-1"></div>
-            </div>
-            <div class="row">
-                <p class="col-lg-12 intro">
-                    Hello, I am Jacob Perry, and I'm a bit of a Jacob… I mean Jack of all Trades. I reside in the beautiful northwest in Everett,
-                    WA, just north of Seattle. I have a passion for a lot of things because I love to learn new things and
-                    challenge myself to always be better. I want to be a modern Rennessance? nope … rennisounce? Not quite...
-                    *opens google…* so close… Renaissance man. What I lack in years of experience I make up for in creatively
-                    thinking about the box (or was it thinking outside the regular hexahedron *closes google*) Either way
-                    I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer,
-                    Game Developer, Graphic Designer, Musician, and Photographer.
-                    <br>
-                    <br> It's nice to meet you! Scroll Down to see some projects I have done.
-                </p>
-            </div>
-            <div class="row">
-                <input name="resume-button" id="resume-button" class="btn btn-primary mx-auto" type="button" value="View Resume">
-            </div>
-        </div>
-        <img src="img/Pixels.png" alt="pixel transition" class="transition-img">
-    </section>
-    <section class="blue" id="frontend-dev">
-        <div class="container">
-            <div class="spacer"></div>
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <h3 id="web-title" class="col-lg-5">
-                    > exec myNameIs.bat
-                    <br/> name: "Jacob Perry"
-                    <br/> title: "Web Developer
-                    <br> >
-                    <span class="blinking-cursor"> | </span>
-                </h3>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-2 section-img">
-                    <img src="img/voxel-jacob.png" class="mx-auto" alt="Vector Resume Design" id="resume-img">
-                </div>
-                <div class="col-lg-1"></div>
-            </div>
-            <div class="row">
-                <p class="col-lg-12 intro">
-                    Programming was something that I was always interested in but never really thought to seriously about as a child. I thought
-                    that is was something that people much smarter than me would do and I would just work on doing art. But
-                    as it turns out I wasn’t all that great at art either so I started to think more seriously about programming.
-                    So in high school I took an intro to web design class and learned the basics of HTML and CSS and was
-                    pretty happy with the results but as I tried to learn more about web programming I just overwhelmed with
-                    all the buzzwords and frameworks and tools that I just didn’t know where to start. It wasn’t till I had
-                    decided to learn how to program in C# making games that I thought I would give web design another shot,
-                    but this time I chose to take an online classes. It was in these online classes that I started to learn
-                    to enjoy web programming as much as I had learned to love making games. I finally understood what it
-                    took to make a website that worked and looked good and was more than just some HTML and CSS.
-                </p>
-            </div>
-            <div class="row">
-                <input name="resume-button" id="resume-button" class="btn btn-primary mx-auto" type="button" value="View Projects" style="margin-bottom: 150px; padding: 15px 25px;">
-            </div>
-        </div>
-        <img src="img/Paint.png" alt="pixel transition" class="transition-img paint">
-    </section>
-    <section class="red" id="graphic-design">
-        <div class="container">
-            <div class="spacer"></div>
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <h3 class="resume-title col-lg-6">
-                    Hi, My Name is
-                    <br/>
-                    <span class="resume-name">Jacob Perry</span>
-                    <br/> Graphic Designer
-                    <br>
-                </h3>
-                <div class="col-lg-2 section-img">
-                    <img src="img/voxel-jacob.png" class="mx-auto" alt="Vector Resume Design" id="resume-img">
-                </div>
-                <div class="col-lg-1"></div>
-            </div>
-            <div class="row">
-                <p class="col-lg-12 intro">
-                    I am going to come right out and say it. I am not good at art. At least not with a pencil and paper. But graphic design isn't
-                    just being able to draw, its being able to create, and that is something that I can do. I enjoy simplicity
-                    and it shows in a lot of my designs. I like to try and keep details clean and minimalistic. I find that
-                    I enjoy working with typography and logo design a lot. I may not be able to create a vector lion with
-                    thousands of Bezier curves and lines, but I can creatively use text and simple shapes to create abstract
-                    logos and designs. I also find pride in being self-taught and always finding new ways to improve my design
-                    and make them even better and more interesting than the last.
-                </p>
-            </div>
-            <div class="row">
-                <input name="resume-button" id="resume-button" class="btn btn-primary mx-auto" type="button" value="View Projects" style="margin-bottom: 150px; padding: 15px 25px;">
-            </div>
-        </div>
-        <img src="img/Paper.png" alt="pixel transition" class="transition-img">
-    </section>
-    <section class="white" id="photography">
-        <img src="img/Paper.png" alt="pixel transition" class="transition-img">
-    </section>
-    <section class="blue" id="contact">
-        <div class="container-fluid">
             <div>
-                <form action="https://formspree.io/your@email.com" method="POST">
-                    <input type="text" name="name">
-                    <input type="email" name="_replyto">
-                    <input type="submit" value="Send">
-                </form>
+                <button type="button" class="btn btn-primary">Button Test</button>
+                <button type="button" class="btn btn-dark">Button Test</button>
             </div>
         </div>
-    </section>
+        <img src="img/Mountains.png" alt="pixel transition" class="transition-img">
     </div>
 
 
