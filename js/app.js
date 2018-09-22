@@ -29,4 +29,3 @@ let anim_logo = PlayAnimation(img, 'json/data.json', "logo");
 let anim_title = PlayAnimation(title, 'json/Typewriter_Name.json', "title");
 
 reverseAnim(anim_logo);
-reverseAnim(anim_title);
