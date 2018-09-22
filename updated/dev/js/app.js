@@ -1,6 +1,5 @@
 let sidebarDelay = 200;
 
-
 $(".nav-item a").click((e) => {
 	$(".active").toggleClass("active");
 	e.currentTarget.classList.toggle("active");
