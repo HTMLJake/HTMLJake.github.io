@@ -5,10 +5,10 @@ const browserSync = require("browser-sync").create();
 
 gulp.task("default", () => {
 	browserSync.init({
-		server: "./dev/",
+		server: "./",
 	});
 
-	gulp.watch("./dev/*.html").on("change", () => browserSync.reload());
+	gulp.watch("./*.html").on("change", () => browserSync.reload());
 	gulp.watch("./dev/js/*.js").on("change", () => browserSync.reload());
 
 	gulp.watch("./dev/sass/**/*.scss", gulp.parallel(["sass"]));

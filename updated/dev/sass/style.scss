@@ -1,16 +1,31 @@
-@import "./node_modules/bootstrap/scss/bootstrap.scss";
+@import "./node_modules/bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Cinzel|Knewave|Russo+One|Space+Mono|Montserrat:300,400,500,600,700');
 
 $designer-font: "knewave",
 sans-serif;
 $primary-font: "Montserrat",
 sans-serif;
-$primary: #33ACE0;
-$light: #F8F9FA;
-$red: #B54042;
 $none: rgba(0, 0, 0, 0);
 
+$theme-colors: (
+    "primary": #00B3FF,
+    "red": #B54042,
+    "light": #f8f8f8
+);
+
+@each $color,
+$value in $theme-colors {
+    .btn-#{$color} {
+        @include button-variant($value, $value);
+    }
+}
+
+$primary: #00B3FF;
+$red: #B54042;
+$light: #F8F8F8;
+
 $shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+$drop-shadow: drop-shadow($shadow);
 
 html,
 body {
@@ -47,7 +62,7 @@ body {
 }
 
 .btn {
-    box-shadow: $shadow;
+    filter: $drop-shadow;
     margin: 15px;
 }
 
@@ -110,7 +125,7 @@ section {
         font-size: calc(6vw * 0.9);
         font-weight: 400;
     }
-    
+
     #name {
         color: $primary;
         font-size: calc(13vw * 0.9);
@@ -129,6 +144,7 @@ section {
     max-width: 125px;
     width: 15%;
     justify-content: center;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.15));
 }
 
 .jp-logo {
