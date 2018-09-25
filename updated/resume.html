@@ -16,58 +16,40 @@
 
 <body>
     <!-- Nav tabs -->
-    <nav class="desktop-nav">
-        <ul class="nav nav-pills mx-auto" id="navId">
-            <li class="nav-item mx-auto">
-                <a href="./index.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item mx-auto">
-                <a href="resume.html" class="nav-link active">Resume</a>
-            </li>
-            <li class="nav-item mx-auto">
-                <a href="frontend-dev" class="nav-link">Web Developer</a>
-            </li>
-            <li class="nav-item mx-auto">
-                <a href="graphic-design" class="nav-link">Graphic Design</a>
-            </li>
-            <li class="nav-item mx-auto">
-                <a href="photography" class="nav-link">Photography</a>
-            </li>
-            <li class="nav-item mx-auto">
-                <a href="contact" class="nav-link">Contact</a>
-            </li>
-        </ul>
-    </nav>
-
-    <div class="mobile-nav">
-        <div id="hamburger" class="hamburger" onclick="toggleSidebar(this)">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <div id="sidebar" class="sidebar">
-            <ul class="nav flex-column" id="navId">
-                <li class="nav-item mx-auto">
-                    <a href="/" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item mx-auto">
-                    <a href="resume" class="nav-link active">Resume</a>
-                </li>
-                <li class="nav-item mx-auto">
-                    <a href="frontend-dev" class="nav-link">Web Developer</a>
-                </li>
-                <li class="nav-item mx-auto">
-                    <a href="graphic-design" class="nav-link">Graphic Design</a>
-                </li>
-                <li class="nav-item mx-auto">
-                    <a href="photography" class="nav-link">Photography</a>
-                </li>
-                <li class="nav-item mx-auto">
-                    <a href="contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-pills mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="resume.html">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resume.html">Web Design</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resume.html">Graphic Design</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resume.html">Photography</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resume.html">Contact</a>
+                    </li>
+    
+                </ul>
+            </div>
+        </nav>
 
     <div class="bkg"></div>
 
@@ -93,8 +75,8 @@
                         I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer,
                         Game Developer, Graphic Designer, Musician, and Photographer.
                     </p>
-        </div>
-        </div>
+                </div>
+            </div>
         </section>
     </div>
 

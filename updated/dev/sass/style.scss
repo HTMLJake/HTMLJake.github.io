@@ -30,6 +30,7 @@ $drop-shadow: drop-shadow($shadow);
 html,
 body {
     font-family: $primary-font;
+    text-align: center;
 }
 
 .call-to-action {
@@ -73,15 +74,22 @@ body {
     align-items: center;
 }
 
-.desktop-nav {
-    transition: .5s;
-    width: 100%;
-    height: 71px;
+.nav-item {
+    margin: auto;
+}
+
+.navbar-nav {
+    margin: auto;
+}
+
+.navbar {
     position: fixed;
-    top: 20px;
-    right: 0px;
-    display: flex;
+    width: 100vw;
     z-index: 50;
+}
+
+.navbar .navbar-light, .navbar-dark {
+    transition: 150ms;
 }
 
 section {
@@ -170,7 +178,7 @@ section {
     z-index: -1;
     height: 100vh;
     width: 100vw;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
