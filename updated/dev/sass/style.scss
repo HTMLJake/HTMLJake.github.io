@@ -183,6 +183,40 @@ section {
     width: 100%;
 }
 
+.resume-title {
+    align-self: center;
+    font-size: 1.5em;
+    font-family: "comfortaa";
+    margin: 15px;
+    font-weight: 800;
+}
+
+.intro {
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+
+#web-title {
+    align-self: center;
+    font-family: "Space Mono";
+    text-align: left;
+}
+
+.resume-name {
+    font-size: 3em;
+}
+
+@media (max-width: 1024px) {
+    .resume-name {
+        font-size: 2em;
+    }
+}
+
+#resume-img {
+    height: 250px;
+}
+
+
 .transition-img {
     z-index: 15;
     position: absolute;
