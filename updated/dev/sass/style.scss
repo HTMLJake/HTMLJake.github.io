@@ -24,7 +24,7 @@ $primary: #00B3FF;
 $red: #B54042;
 $light: #F8F8F8;
 
-$shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+$shadow: 5px 5px 3px rgba(0, 0, 0, 0.15);
 $drop-shadow: drop-shadow($shadow);
 
 html,
@@ -90,6 +90,9 @@ body {
 
 .nav-link {
     font-weight: 600;
+    text-transform: uppercase;
+    height: 35px;
+    font-size: .85em;
 }
 
 .navbar-nav {
@@ -157,8 +160,7 @@ section {
         font-size: calc(13vw * 0.9);
         font-weight: 800;
     }
-
-
+    
     #about {
         font-size: calc(3vw * 0.9);
         font-weight: 400;
@@ -209,12 +211,30 @@ section {
     width: 100%;
 }
 
+h3 {
+    text-transform: uppercase;
+    margin: 0px;
+}
+
 .resume-title {
     align-self: center;
-    font-size: 1.5em;
+    font-size: 1.7em;
     font-family: $primary-font;
-    margin: 15px 0px;
-    font-weight: 800;
+    margin: 15px 0px 0px 0px;
+    font-weight: 400;
+    color: $primary;
+}
+
+.resume-name {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.resume-tagline {
+    font-size: 1em;
+    letter-spacing: .1em;
+    font-weight: 200;
+    margin-bottom: 25px;
 }
 
 .intro {
@@ -223,20 +243,10 @@ section {
     margin-bottom: 50px;
 }
 
-#web-title {
-    align-self: center;
-    font-family: "Space Mono";
-    text-align: left;
-}
-
-.resume-name {
-    font-size: 4em;
-    color: $primary;
-}
 
 @media (min-width: 1024px) {
     .resume-name {
-        font-size: 2.5em;
+        font-size: 4em;
     }
 
     .intro {
@@ -256,13 +266,6 @@ section {
     width: 100%;
     bottom: -1px;
 }
-
-@media (max-width: 825px) {
-    .desktop-nav {
-        display: none;
-    }
-}
-
 
 
 /* Blinking Cursor code from Artem Gordinsky on codepen*/
