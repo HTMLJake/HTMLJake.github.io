@@ -7429,11 +7429,22 @@ body {
       -ms-flex-align: center;
           align-items: center; }
 
+.bar {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin: 5px;
+  height: 5px;
+  width: 30px;
+  background-color: #fafafa; }
+
 .nav-item {
   margin: auto; }
 
 .navbar-nav {
   margin: auto; }
+
+.navbar-toggler {
+  border: 0px solid black; }
 
 .navbar {
   position: fixed;
@@ -7548,10 +7559,11 @@ section {
       align-self: center;
   font-size: 1.5em;
   font-family: "comfortaa";
-  margin: 15px;
+  margin: 15px 0px;
   font-weight: 800; }
 
 .intro {
+  font-size: 12px;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -7564,14 +7576,18 @@ section {
   text-align: left; }
 
 .resume-name {
-  font-size: 3em; }
+  font-size: 2em; }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .resume-name {
-    font-size: 2em; } }
+    font-size: 2.5em; }
+  .intro {
+    font-size: 1vw; } }
 
 #resume-img {
-  height: 250px; }
+  height: 100px;
+  -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.15)); }
 
 .transition-img {
   z-index: 15;

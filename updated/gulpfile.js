@@ -5,21 +5,27 @@ const browserSync = require("browser-sync").create();
 
 gulp.task("default", () => {
 	browserSync.init({
-		server: "./",
+		server: {
+			baseDir: "./",
+			index: "./app/index.html",
+			routes: {
+				"/graphic-design": "/app/"
+			}
+		}
 	});
 
-	gulp.watch("./*.html").on("change", () => browserSync.reload());
-	gulp.watch("./dev/js/*.js").on("change", () => browserSync.reload());
+	gulp.watch("./**/*.html").on("change", () => browserSync.reload());
+	gulp.watch("./Dist/dev/js/*.js").on("change", () => browserSync.reload());
 
-	gulp.watch("./dev/sass/**/*.scss", gulp.parallel(["sass"]));
+	gulp.watch("./Dist/dev/sass/**/*.scss", gulp.parallel(["sass"]));
 });
 
 gulp.task("sass", function () {
-	return gulp.src("./dev/sass/**/*.scss")
+	return gulp.src("./Dist/dev/sass/**/*.scss")
 		.pipe(sass().on("error", sass.logError))
 		.pipe(autoprefixer({
 			browsers: ["last 2 versions"],
 		}))
-		.pipe(gulp.dest("./dev/css"))
+		.pipe(gulp.dest("./Dist/dev/css"))
 		.pipe(browserSync.stream());
 });
