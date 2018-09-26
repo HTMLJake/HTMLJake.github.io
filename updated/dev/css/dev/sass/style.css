@@ -7438,10 +7438,8 @@ body {
   background-color: #fafafa; }
 
 .nav-item {
-  margin: auto; }
-
-.nav-link {
-  font-weight: 600; }
+  margin: auto;
+  font-weight: 800; }
 
 .navbar-nav {
   margin: auto; }
@@ -7561,7 +7559,7 @@ section {
   -ms-flex-item-align: center;
       align-self: center;
   font-size: 1.5em;
-  font-family: "Montserrat", sans-serif;
+  font-family: "comfortaa";
   margin: 15px 0px;
   font-weight: 800; }
 
@@ -7579,8 +7577,7 @@ section {
   text-align: left; }
 
 .resume-name {
-  font-size: 4em;
-  color: #00B3FF; }
+  font-size: 2em; }
 
 @media (min-width: 1024px) {
   .resume-name {

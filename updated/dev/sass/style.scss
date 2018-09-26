@@ -88,6 +88,10 @@ body {
     margin: auto;
 }
 
+.nav-link {
+    font-weight: 600;
+}
+
 .navbar-nav {
     margin: auto;
 }
@@ -208,7 +212,7 @@ section {
 .resume-title {
     align-self: center;
     font-size: 1.5em;
-    font-family: "comfortaa";
+    font-family: $primary-font;
     margin: 15px 0px;
     font-weight: 800;
 }
@@ -226,7 +230,8 @@ section {
 }
 
 .resume-name {
-    font-size: 2em;
+    font-size: 4em;
+    color: $primary;
 }
 
 @media (min-width: 1024px) {

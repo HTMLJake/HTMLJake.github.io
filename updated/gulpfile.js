@@ -8,24 +8,21 @@ gulp.task("default", () => {
 		server: {
 			baseDir: "./",
 			index: "./app/index.html",
-			routes: {
-				"/graphic-design": "/app/"
-			}
 		}
 	});
 
 	gulp.watch("./**/*.html").on("change", () => browserSync.reload());
-	gulp.watch("./Dist/dev/js/*.js").on("change", () => browserSync.reload());
+	gulp.watch("./dev/js/*.js").on("change", () => browserSync.reload());
 
-	gulp.watch("./Dist/dev/sass/**/*.scss", gulp.parallel(["sass"]));
+	gulp.watch("./**/sass/**/*.scss", gulp.parallel(["sass"]));
 });
 
 gulp.task("sass", function () {
-	return gulp.src("./Dist/dev/sass/**/*.scss")
+	return gulp.src("./dev/sass/**/*.scss")
 		.pipe(sass().on("error", sass.logError))
 		.pipe(autoprefixer({
 			browsers: ["last 2 versions"],
 		}))
-		.pipe(gulp.dest("./Dist/dev/css"))
+		.pipe(gulp.dest("./dev/css"))
 		.pipe(browserSync.stream());
 });
