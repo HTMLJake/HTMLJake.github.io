@@ -27,10 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-pills mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="../">Home</a>
+                    <a class="nav-link" href="../">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../app/resume.html">Resume</a>
+                    <a class="nav-link active" href="../app/resume.html">Resume</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../app/web-design.html">Web Design</a>
@@ -52,7 +52,7 @@
     <div class="bkg"></div>
 
     <section class="gray" id="resume">
-        <div class="spacer"></div>
+        <div class="spacer">Projects</div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-5 intro">
@@ -78,7 +78,7 @@
                         Game Developer, Graphic Designer, Musician, and Photographer.
                     </p>
                 </div>
-                <div id="cards" class="col" style="display: flex; flex-wrap: wrap; color: whitesmoke; overflow-y: scroll; height: 68vh;">
+                <div id="cards" class="col">
                     <!-- Modal -->
                     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
                         aria-hidden="true" style="color: #333">
@@ -91,7 +91,8 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    {{ cards[state].text }}
+                                    <img class="modal-img" v-bind:src="cards[state].img" alt="">
+                                    <p class="modal-description">{{ cards[state].text }}</p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary">Go To Project</button>
@@ -100,9 +101,9 @@
                         </div>
                     </div>
                     <div v-for="(card, index) in cards" v-on:click="ChangeState(index)" data-toggle="modal" data-target="#modelId"
-                        class="card" style="width: 45%; height: 250px; margin: 5px; background-color: #222; border-radius: 10px;">
-                        <div v-bind:style="'background-image: url(' + card.img + ')'" style="width: 100%; height: 100%; overflow: hidden; background-position: 50% 50%; background-size: cover; background-repeat: no-repeat; filter: opacity(20%);"></div>
-                        <div class="card-body" style="z-index: 5; position: absolute; bottom: 0; width: 100%;">
+                        class="card">
+                        <div class="card-bkg" v-bind:style="'background-image: url(' + card.img + ')'"></div>
+                        <div class="card-body">
                             <h4>{{ card.title }}</h4>
                         </div>
                     </div>
@@ -111,7 +112,60 @@
         </div>
     </section>
 
+    <style>
+        #cards {
+            display: flex;
+            flex-wrap: wrap;
+            color: whitesmoke;
+            height: 68vh;
+            overflow-y: scroll;
+        }
 
+        .card {
+            width: 46%;
+            height: 250px;
+            margin: 5px;
+            background-color: #222;
+            border-radius: 10px;
+        }
+
+        .card-bkg {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-position: 50% 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: opacity(20%);
+        }
+
+        .card-body {
+            z-index: 5;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 758px) {
+            #cards {
+                overflow-y: visible;
+            }
+        }
+        @media (max-width: 450px) {
+            .card {
+                width: 100%;
+            }
+        }
+
+        .modal-img {
+            width: 100%;
+            padding: 25px;
+        }
+
+        .modal-description {
+            font-size: .75rem;
+        }
+    </style>
 
 
     <script src="../dev/js/jquery.js"></script>
