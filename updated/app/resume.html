@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="../dev/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../dev/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../dev/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Jacob Perry Resume</title>
 </head>
 
@@ -51,35 +52,67 @@
     <div class="bkg"></div>
 
     <section class="gray" id="resume">
-        <div class="container">
-            <div class="spacer"></div>
-            <div class="col-md-5 intro">
-                <div class="col section-img">
-                    <img src="../dev/img/ResumeDesign.png" class="mx-auto" alt="Vector Resume Design" id="resume-img">
+        <div class="spacer"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5 intro">
+                    <div class="col section-img">
+                        <img src="../dev/img/voxel-jacob.png" class="mx-auto" alt="Vector Resume Design" id="resume-img">
+                    </div>
+                    <h3 class="resume-title">Hello, My Name is</h3>
+                    <h3 class="resume-name"> Jacob Perry </h3>
+                    <h3 class="resume-tagline">Web Designer</h3>
+                    <p class="col intro">
+                        Hello, I am Jacob Perry, and I'm a bit of a Jacob… I mean Jack of all Trades. I reside in the
+                        beautiful northwest in Everett,
+                        WA, just north of Seattle. I have a passion for a lot of things because I love to learn new
+                        things and
+                        challenge myself to always be better. I want to be a modern Rennessance? nope … rennisounce?
+                        Not quite...
+                        *opens google…* so close… Renaissance man. What I lack in years of experience I make up for in
+                        creatively
+                        thinking about the box (or was it thinking outside the regular hexahedron *closes google*)
+                        Either way
+                        I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend
+                        Developer,
+                        Game Developer, Graphic Designer, Musician, and Photographer.
+                    </p>
                 </div>
-                <h3 class="resume-title">Hello, My Name is</h3>
-                <h3 class="resume-name"> Jacob Perry </h3>
-                <h3 class="resume-tagline"> Your Next Employee</h3>
-                <p class="col intro">
-                    Hello, I am Jacob Perry, and I'm a bit of a Jacob… I mean Jack of all Trades. I reside in the
-                    beautiful northwest in Everett,
-                    WA, just north of Seattle. I have a passion for a lot of things because I love to learn new
-                    things and
-                    challenge myself to always be better. I want to be a modern Rennessance? nope … rennisounce?
-                    Not quite...
-                    *opens google…* so close… Renaissance man. What I lack in years of experience I make up for in
-                    creatively
-                    thinking about the box (or was it thinking outside the regular hexahedron *closes google*)
-                    Either way
-                    I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend
-                    Developer,
-                    Game Developer, Graphic Designer, Musician, and Photographer.
-                </p>
+                <div id="cards" class="col" style="display: flex; flex-wrap: wrap; color: whitesmoke; overflow-y: scroll; height: 68vh;">
+                    <!-- Modal -->
+                    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                        aria-hidden="true" style="color: #333">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="modelTitleId">{{ cards[state].title }}</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {{ cards[state].text }}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Go To Project</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-for="(card, index) in cards" v-on:click="ChangeState(index)" data-toggle="modal" data-target="#modelId"
+                        class="card" style="width: 45%; height: 250px; margin: 5px; background-color: #222; border-radius: 10px;">
+                        <div v-bind:style="'background-image: url(' + card.img + ')'" style="width: 100%; height: 100%; overflow: hidden; background-position: 50% 50%; background-size: cover; background-repeat: no-repeat; filter: opacity(20%);"></div>
+                        <div class="card-body" style="z-index: 5; position: absolute; bottom: 0; width: 100%;">
+                            <h4>{{ card.title }}</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <section class="col-lg-8 col-md-3"></section>
         </div>
     </section>
-    </div>
+
+
+
 
     <script src="../dev/js/jquery.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
