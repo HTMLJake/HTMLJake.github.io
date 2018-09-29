@@ -1,37 +1,38 @@
 [
-    {
-      "title": "THIS IS SPARTA",
-      "img": "../dev/img/bkg-img.jpg",
-      "text": "I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer, Game Developer, Graphic Designer, Musician, and Photographer."
-    },
-    {
-      "title": "THIS IS SPARTA",
-      "img": "../dev/img/bkg-img.jpg",
-      "text": "I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer, Game Developer, Graphic Designer, Musician, and Photographer."
-    },
-    {
-      "title": "THIS IS SPARTA",
-      "img": "../dev/img/bkg-img.jpg",
-      "text": "I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer, Game Developer, Graphic Designer, Musician, and Photographer."
-    },
-    {
-      "title": "THIS IS SPARTA",
-      "img": "../dev/img/bkg-img.jpg",
-      "text": "I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer, Game Developer, Graphic Designer, Musician, and Photographer."
-    },
-    {
-      "title": "THIS IS SPARTA",
-      "img": "../dev/img/bkg-img.jpg",
-      "text": "I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer, Game Developer, Graphic Designer, Musician, and Photographer."
-    },
-    {
-      "title": "THIS IS SPARTA",
-      "img": "../dev/img/bkg-img.jpg",
-      "text": "I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer, Game Developer, Graphic Designer, Musician, and Photographer."
-    },
-    {
-      "title": "THIS IS SPARTA",
-      "img": "../dev/img/bkg-img.jpg",
-      "text": "I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer, Game Developer, Graphic Designer, Musician, and Photographer."
-    }
-  ]
+  {
+    "title": "THIS IS SPARTA",
+    "img": "../dev/img/bkg-img.jpg",
+    "text": "I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer, Game Developer, Graphic Designer, Musician, and Photographer.",
+    "url": "http://www.github.com/htmljake"
+  },
+  {
+    "title": "THIS IS SPARTA",
+    "img": "../dev/img/bkg-img.jpg",
+    "text": "I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer, Game Developer, Graphic Designer, Musician, and Photographer.",
+    "url": "http://www.github.com/htmljake"
+  },
+  {
+    "title": "THIS IS SPARTA",
+    "img": "../dev/img/bkg-img.jpg",
+    "text": "I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer, Game Developer, Graphic Designer, Musician, and Photographer.",
+    "url": "http://www.github.com/htmljake"
+  },
+  {
+    "title": "THIS IS SPARTA",
+    "img": "../dev/img/bkg-img.jpg",
+    "text": "I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer, Game Developer, Graphic Designer, Musician, and Photographer.",
+    "url": "http://www.github.com/htmljake"
+  },
+  {
+    "title": "THIS IS SPARTA",
+    "img": "../dev/img/bkg-img.jpg",
+    "text": "I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer, Game Developer, Graphic Designer, Musician, and Photographer.",
+    "url": "http://www.github.com/htmljake"
+  },
+  {
+    "title": "THIS IS SPARTA",
+    "img": "../dev/img/bkg-img.jpg",
+    "text": "I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer, Game Developer, Graphic Designer, Musician, and Photographer.",
+    "url": "http://www.github.com/htmljake"
+  }
+]
