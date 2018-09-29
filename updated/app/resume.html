@@ -54,14 +54,17 @@
     <section class="gray" id="resume">
         <div class="spacer">Projects</div>
         <div class="container-fluid">
+            <div class="row section-title">
+                    <h2>Resume</h2>
+            </div>
             <div class="row">
                 <div class="col-md-5 intro">
                     <div class="col section-img">
-                        <img src="../dev/img/voxel-jacob.png" class="mx-auto" alt="Vector Resume Design" id="resume-img">
+                        <img src="../dev/img/jp-logo.png" class="mx-auto" alt="Vector Resume Design" id="resume-img">
                     </div>
                     <h3 class="resume-title">Hello, My Name is</h3>
                     <h3 class="resume-name"> Jacob Perry </h3>
-                    <h3 class="resume-tagline">Web Designer</h3>
+                    <h3 class="resume-tagline">Your next employee</h3>
                     <p class="col intro">
                         Hello, I am Jacob Perry, and I'm a bit of a Jacob… I mean Jack of all Trades. I reside in the
                         beautiful northwest in Everett,
@@ -78,55 +81,44 @@
                         Game Developer, Graphic Designer, Musician, and Photographer.
                     </p>
                 </div>
-                <div id="cards" class="col">
-                    <!-- Modal -->
-                    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-                        aria-hidden="true" style="color: #333">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title" id="modelTitleId">{{ cards[state].title }}</h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <img class="modal-img" v-bind:src="cards[state].img" alt="">
-                                    <p class="modal-description">{{ cards[state].text }}</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary">Go To Project</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div v-for="(card, index) in cards" v-on:click="ChangeState(index)" data-toggle="modal" data-target="#modelId"
-                        class="card">
-                        <div class="card-bkg" v-bind:style="'background-image: url(' + card.img + ')'"></div>
-                        <div class="card-body">
-                            <h4>{{ card.title }}</h4>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <style>
+        .section-title {
+            justify-content: center;
+            background: #333;
+            margin-top: 15px;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 5vw;
+            font-weight: 600;
+            color: #1bf;
+        }
+
         #cards {
             display: flex;
             flex-wrap: wrap;
             color: whitesmoke;
-            height: 68vh;
+            height: 520px;
             overflow-y: scroll;
         }
 
         .card {
-            width: 46%;
-            height: 250px;
-            margin: 5px;
+            width: 30%;
+            height: 45%;
+            margin: 1.5%;
             background-color: #222;
-            border-radius: 10px;
+            border-radius: 15px;
+        }
+
+        @media (max-width: 950px) {
+            .card {
+                width: 46%;
+            }
         }
 
         .card-bkg {
@@ -137,6 +129,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             filter: opacity(20%);
+            border-radius: 15px;
         }
 
         .card-body {
@@ -171,7 +164,7 @@
     <script src="../dev/js/jquery.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="../dev/js/jquery.fittext.js"></script>
-    <script src="../dev/js/app.js"></script>
+    <script src="../dev/js/bundle.js"></script>
 </body>
 
 </html>

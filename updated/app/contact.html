@@ -8,7 +8,8 @@
     <link rel="shortcut icon" href="../dev/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../dev/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../dev/css/style.css">
-    <title>Jacob Perry Resume - contact</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Jacob Perry Resume</title>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-pills mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="../">Home</a>
+                    <a class="nav-link" href="../">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../app/resume.html">Resume</a>
@@ -41,7 +42,7 @@
                     <a class="nav-link" href="../app/photography.html">Photography</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../app/contact.html">Contact</a>
+                    <a class="nav-link active" href="../app/contact.html">Contact</a>
                 </li>
 
             </ul>
@@ -51,41 +52,92 @@
     <div class="bkg"></div>
 
     <section class="gray" id="resume">
-        <div class="container">
-            <div class="spacer"></div>
-            <div class="col-lg-4 col-md-3 intro">
-                <div class="col section-img">
-                    <img src="../dev/img/ResumeDesign.png" class="mx-auto" alt="Vector Resume Design" id="resume-img">
-                </div>
-                <h3 class="resume-title col">Hello, My Name is
-                    <br />
-                    <span class="resume-name"> Jacob Perry </span>
-                    <br /> Your Next Employee</h3>
-                <p class="col intro">
-                    Hello, I am Jacob Perry, and I'm a bit of a Jacob… I mean Jack of all Trades. I reside in the
-                    beautiful northwest in Everett,
-                    WA, just north of Seattle. I have a passion for a lot of things because I love to learn new things
-                    and
-                    challenge myself to always be better. I want to be a modern Rennessance? nope … rennisounce? Not
-                    quite...
-                    *opens google…* so close… Renaissance man. What I lack in years of experience I make up for in
-                    creatively
-                    thinking about the box (or was it thinking outside the regular hexahedron *closes google*) Either
-                    way
-                    I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend
-                    Developer,
-                    Game Developer, Graphic Designer, Musician, and Photographer.
-                </p>
-            </div>
-            <section class="col-lg-8 col-md-3"></section>
+        <div class="spacer">Projects</div>
+        <div class="container-fluid">
+            <h2>Coming Soon</h2>            
         </div>
     </section>
-    </div>
+
+    <style>
+        .section-title {
+            justify-content: center;
+            background: #333;
+            margin-top: 15px;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 5vw;
+            font-weight: 600;
+            color: #1bf;
+        }
+
+        #cards {
+            display: flex;
+            flex-wrap: wrap;
+            color: whitesmoke;
+            height: 520px;
+            overflow-y: scroll;
+        }
+
+        .card {
+            width: 30%;
+            height: 45%;
+            margin: 1.5%;
+            background-color: #222;
+            border-radius: 15px;
+        }
+
+        @media (max-width: 950px) {
+            .card {
+                width: 46%;
+            }
+        }
+
+        .card-bkg {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-position: 50% 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: opacity(20%);
+            border-radius: 15px;
+        }
+
+        .card-body {
+            z-index: 5;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 758px) {
+            #cards {
+                overflow-y: visible;
+            }
+        }
+        @media (max-width: 450px) {
+            .card {
+                width: 100%;
+            }
+        }
+
+        .modal-img {
+            width: 100%;
+            padding: 25px;
+        }
+
+        .modal-description {
+            font-size: .75rem;
+        }
+    </style>
+
 
     <script src="../dev/js/jquery.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="../dev/js/jquery.fittext.js"></script>
-    <script src="../dev/js/app.js"></script>
+    <script src="../dev/js/bundle.js"></script>
 </body>
 
 </html>

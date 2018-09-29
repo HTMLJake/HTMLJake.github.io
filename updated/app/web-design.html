@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="../dev/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../dev/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../dev/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Jacob Perry Resume</title>
 </head>
 
@@ -26,13 +27,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-pills mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="../">Home</a>
+                    <a class="nav-link" href="../">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../app/resume.html">Resume</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../app/web-design.html">Web Design</a>
+                    <a class="nav-link active" href="../app/web-design.html">Web Design</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../app/graphic-design.html">Graphic Design</a>
@@ -51,35 +52,139 @@
     <div class="bkg"></div>
 
     <section class="gray" id="resume">
-            <div class="container">
-                <div class="spacer"></div>
-                <div class="col-lg-4 col-md-3 intro">
+        <div class="spacer">Projects</div>
+        <div class="container-fluid">
+            <div class="row section-title">
+                    <h2>Web Design Projects</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-5 intro">
                     <div class="col section-img">
-                        <img src="../dev/img/ResumeDesign.png" class="mx-auto" alt="Vector Resume Design" id="resume-img">
+                        <img src="../dev/img/voxel-jacob.png" class="mx-auto" alt="Vector Resume Design" id="resume-img">
                     </div>
-                    <h3 class="resume-title col">Hello, My Name is
-                        <br/>
-                        <span class="resume-name"> Jacob Perry </span>
-                        <br/> Your Next Employee</h3>
+                    <h3 class="resume-title">Hello, My Name is</h3>
+                    <h3 class="resume-name"> Jacob Perry </h3>
+                    <h3 class="resume-tagline">Web Designer</h3>
                     <p class="col intro">
-                        Hello, I am Jacob Perry, and I'm a bit of a Jacob… I mean Jack of all Trades. I reside in the beautiful northwest in Everett,
-                        WA, just north of Seattle. I have a passion for a lot of things because I love to learn new things and
-                        challenge myself to always be better. I want to be a modern Rennessance? nope … rennisounce? Not quite...
-                        *opens google…* so close… Renaissance man. What I lack in years of experience I make up for in creatively
-                        thinking about the box (or was it thinking outside the regular hexahedron *closes google*) Either way
-                        I like to make stuff, learn things, and speak vague. Some of the hats that I wear are Frontend Developer,
-                        Game Developer, Graphic Designer, Musician, and Photographer.
+                            Programming was something that I was always interested in but never really thought to seriously about as a child. I thought that is was something that people much smarter than me would do and I would just work on doing art. But as it turns out I wasn’t all that great at art either so I started to think more seriously about programming. So in high school I took an intro to web design class and learned the basics of HTML and CSS and was pretty happy with the results but as I tried to learn more about web programming I just overwhelmed with all the buzzwords and frameworks and tools that I just didn’t know where to start. It wasn’t till I had decided to learn how to program in C# making games that I thought I would give web design another shot, but this time I chose to take an online classes. It was in these online classes that I started to learn to enjoy web programming as much as I had learned to love making games. I finally understood what it took to make a website that worked and looked good and was more than just some HTML and CSS. 
                     </p>
                 </div>
-                <section class="col-lg-8 col-md-3"></section>
+                <div id="cards" class="col">
+                    <!-- Modal -->
+                    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                        aria-hidden="true" style="color: #333">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="modelTitleId">{{ cards[state].title }}</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="modal-img" v-if="cards[state].thumbnail" v-bind:src="cards[state].thumbnail.fields.file.url">
+                                    <img class="modal-img" src="../dev/img/bkg-img.jpg" v-else>
+                                    <p class="modal-description">{{ cards[state].description }}</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a v-bind:href="cards[state].url">
+                                        <button type="button" class="btn btn-primary">Go To Project</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a v-if="cards.length !== 0" v-for="(card, index) in cards" v-on:click="ChangeState(index)" data-toggle="modal" data-target="#modelId" class="card">
+                        <div class="card-bkg" v-if="card.thumbnail" v-bind:style="'background-image: url('+ card.thumbnail.fields.file.url +')'"></div>
+                        <div class="card-body">
+                            <h4 v-if="card.title.length !== 0" v-text="card.title"></h4>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+
+    <style>
+        .section-title {
+            justify-content: center;
+            background: #333;
+            margin-top: 15px;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 5vw;
+            font-weight: 600;
+            color: #1bf;
+        }
+
+        #cards {
+            display: flex;
+            flex-wrap: wrap;
+            color: whitesmoke;
+            height: 520px;
+            overflow-y: scroll;
+        }
+
+        .card {
+            width: 30%;
+            height: 45%;
+            margin: 1.5%;
+            background-color: #222;
+            border-radius: 15px;
+        }
+
+        @media (max-width: 950px) {
+            .card {
+                width: 46%;
+            }
+        }
+
+        .card-bkg {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-position: 50% 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: opacity(20%);
+            border-radius: 15px;
+        }
+
+        .card-body {
+            z-index: 5;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 758px) {
+            #cards {
+                overflow-y: visible;
+            }
+        }
+        @media (max-width: 450px) {
+            .card {
+                width: 100%;
+            }
+        }
+
+        .modal-img {
+            width: 100%;
+            padding: 25px;
+        }
+
+        .modal-description {
+            font-size: .75rem;
+        }
+    </style>
+
 
     <script src="../dev/js/jquery.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="../dev/js/jquery.fittext.js"></script>
-    <script src="../dev/js/app.js"></script>
+    <script src="../dev/js/bundle.js"></script>
 </body>
 
 </html>
