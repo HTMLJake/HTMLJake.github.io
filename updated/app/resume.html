@@ -81,13 +81,25 @@
                         Game Developer, Graphic Designer, Musician, and Photographer.
                     </p>
                 </div>
+                <div id="pdf" class="col"></div>
             </div>
         </div>
     </section>
 
-    <script src="../dev/js/jquery.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="../dev/js/jquery.fittext.js"></script>
+    <script src="../dev/js/pdfobject.min.js"></script>
+    <script>PDFObject.embed("../dev/Jacob Perry - Front-End Developer Resume.pdf", "#pdf")</script>
+
+    <style>
+        .pdfobject-container {
+            padding: 0px 150px;
+            height: 70vh;
+        }
+        
+        .pdfobject {
+            border: 5px solid #555;
+        }
+    </style>
+
     <script src="../dev/js/bundle.js"></script>
 </body>
 
