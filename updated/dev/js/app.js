@@ -1,4 +1,18 @@
 const contentful = require("contentful");
+const Vue = require("../js/vue.min.js");
+const $ = require("jquery");
+const popper = require("popper.js");
+const bootstrap = require("bootstrap");
+
+const contentTypes = {
+	WEB_PROJECT: "webProjects",
+	IMAGES: "images"
+};
+
+const projectTypes = {
+	GRAPHIC_DESIGN: "Graphic Design",
+	PHOTOGRAPHY: "Photography"
+};
 
 const SPACE_ID = "d9rh82o1q0d9";
 const ACCESS_TOKEN = "3de3971f471c5fa950eb06630300560d8a88b510d9ac40d4f966c5c54c49c8a7";
@@ -9,18 +23,6 @@ const client = contentful.createClient({
 	// This is the access token for this space. Normally you get both ID and the token in the Contentful web app
 	accessToken: ACCESS_TOKEN
 });
-
-function GetProjectData() {
-	return client.getEntries("Web")
-		.then(function (entries) {
-			app.cards = entries.items.map((entry) => {
-				return entry.fields;
-			});
-			console.log(app.cards);
-		});
-}
-
-GetProjectData();
 
 $(window).scroll(() => {
 	if (window.scrollY > 50) {
@@ -36,17 +38,54 @@ let app = new Vue({
 	el: "#cards",
 	data: {
 		state: 0,
-		message: "Hello World",
-		cards: [],
+		web: [],
+		graphic: [],
+		photo: []
 	},
 	methods: {
 		ChangeState: function (i) {
 			this.state = i;
+		},
+		GetImageProjects: function (projectType) {
+			return client.getEntries()
+				.then(function (entries) {
+					return entries.items
+						.filter((entry) => {
+							return entry.sys.contentType.sys.id === contentTypes.IMAGES;
+						})
+						.filter(img => {
+							return img.fields.projectType === projectType;
+						})
+						.map(e => {
+							return e.fields;
+						});
+				});
+		},
+		GetWebProjects: function () {
+			return client.getEntries()
+				.then(function (entries) {
+					return entries.items.filter((entry) => {
+						return entry.sys.contentType.sys.id === contentTypes.WEB_PROJECT;
+					}).map(e => {
+						return e.fields;
+					});
+				});
 		}
+
 	}
 });
 
+app.GetWebProjects().then(r => {
+	app.web = r;
+});
 
+app.GetImageProjects(projectTypes.PHOTOGRAPHY).then(r => {
+	app.photo = r;
+});
+
+app.GetImageProjects(projectTypes.GRAPHIC_DESIGN).then(r => {
+	app.graphic = r;
+});
 
 /* (function fetchJson () {
 	fetch("../dev/js/data.json").then((r) => {
