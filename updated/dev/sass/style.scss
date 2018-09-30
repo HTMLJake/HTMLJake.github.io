@@ -95,6 +95,12 @@ body {
     font-size: .85em;
 }
 
+@media (max-width:995px) {
+    .nav-item {
+        height: 55px;
+    }
+}
+
 .navbar-nav {
     margin: auto;
 }
