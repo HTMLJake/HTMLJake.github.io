@@ -7714,7 +7714,10 @@ h3 {
 
 @media (max-width: 758px) {
   #cards {
-    overflow-y: visible; } }
+    overflow-y: visible; }
+  .section-title h2 {
+    font-size: 1.8em;
+    margin: 5px auto; } }
 
 @media (max-width: 450px) {
   .card {
