@@ -455,3 +455,20 @@ h3 {
         padding: 25px;
     }
 }
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.contact-input {
+    margin: 10px;
+
+}
+
+textarea {
+    min-height: 250px;
+}
