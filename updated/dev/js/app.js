@@ -11,7 +11,8 @@ const contentTypes = {
 
 const projectTypes = {
 	GRAPHIC_DESIGN: "Graphic Design",
-	PHOTOGRAPHY: "Photography"
+	PHOTOGRAPHY: "Photography",
+	WEB_DESIGN: "Web Design"
 };
 
 const SPACE_ID = "d9rh82o1q0d9";
@@ -86,11 +87,3 @@ app.GetImageProjects(projectTypes.PHOTOGRAPHY).then(r => {
 app.GetImageProjects(projectTypes.GRAPHIC_DESIGN).then(r => {
 	app.graphic = r;
 });
-
-/* (function fetchJson () {
-	fetch("../dev/js/data.json").then((r) => {
-		return r.json();
-	}).then(j => {
-		app.cards = j;
-	});
-}()); */
