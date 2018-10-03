@@ -30,19 +30,19 @@
                     <a class="nav-link" href="../">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../app/resume.html">Resume</a>
+                    <a class="nav-link" href="../resume">Resume</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../app/web-design.html">Web Design</a>
+                    <a class="nav-link active" href="../web-design">Web Design</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../app/graphic-design.html">Graphic Design</a>
+                    <a class="nav-link" href="../graphic-design">Graphic Design</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="../app/photography.html">Photography</a>
+                    <a class="nav-link" href="../photography">Photography</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../app/contact.html">Contact</a>
+                    <a class="nav-link" href="../contact">Contact</a>
                 </li>
 
             </ul>
@@ -55,7 +55,7 @@
         <div class="spacer">Projects</div>
         <div class="container-fluid">
             <div class="row section-title">
-                    <h2>Photography Projects</h2>
+                <h2>Web Design Projects</h2>
             </div>
             <div class="row">
                 <div class="col-md-5 intro">
@@ -64,9 +64,20 @@
                     </div>
                     <h3 class="resume-title">Hello, My Name is</h3>
                     <h3 class="resume-name"> Jacob Perry </h3>
-                    <h3 class="resume-tagline">Photographer</h3>
+                    <h3 class="resume-tagline">Web Designer</h3>
                     <p class="col intro">
-                            Jacob Perry resides in the lush pacific northwest where he enjoys his cold mornings with a warm cup of apple cider. He started taking photographs from a very young age and loved the ability to capture moments in time to document his history on this blue marble floating through space. He is drawn most to photographs of the world around him from mountains veiled is clouds to ocean waves slapping against the rocky shores of the west coast. Though Jacob is not a world traveling photographer he does love to take any chance to go on a hike to enjoy the local beauty around him and inhale the fresh mountain air drenched in petrichor and full of life. 
+                        Programming was something that I was always interested in but never really thought to seriously
+                        about as a child. I thought that is was something that people much smarter than me would do and
+                        I would just work on doing art. But as it turns out I wasn’t all that great at art either so I
+                        started to think more seriously about programming. So in high school I took an intro to web
+                        design class and learned the basics of HTML and CSS and was pretty happy with the results but
+                        as I tried to learn more about web programming I just overwhelmed with all the buzzwords and
+                        frameworks and tools that I just didn’t know where to start. It wasn’t till I had decided to
+                        learn how to program in C# making games that I thought I would give web design another shot,
+                        but this time I chose to take an online classes. It was in these online classes that I started
+                        to learn to enjoy web programming as much as I had learned to love making games. I finally
+                        understood what it took to make a website that worked and looked good and was more than just
+                        some HTML and CSS.
                     </p>
                 </div>
                 <div id="cards" class="col">
@@ -74,30 +85,31 @@
                     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
                         aria-hidden="true" style="color: #333">
                         <div class="modal-dialog" role="document">
-                            <div class="modal-content">
+                            <div class="modal-content" v-if="web[state]">
                                 <div class="modal-header">
-                                    <h4 class="modal-title" id="modelTitleId">{{ photo[state].title }}</h4>
+                                    <h4 class="modal-title" id="modelTitleId">{{ web[state].title }}</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <img class="modal-img" v-if="photo[state].thumbnail" v-bind:src="photo[state].thumbnail.fields.file.url">
+                                    <img class="modal-img" v-if="web[state].thumbnail" v-bind:src="web[state].thumbnail.fields.file.url">
                                     <img class="modal-img" src="../dev/img/bkg-img.jpg" v-else>
-                                    <p class="modal-description">{{ photo[state].description }}</p>
+                                    <p class="modal-description">{{ web[state].description }}</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <a v-bind:href="photo[state].url">
+                                    <a v-bind:href="web[state].url">
                                         <button type="button" class="btn btn-primary">Go To Project</button>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a v-if="photo.length !== 0" v-for="(card, index) in photo" v-on:click="ChangeState(index)" data-toggle="modal" data-target="#modelId" class="card">
-                        <div class="card-bkg" v-if="card.thumbnail" v-bind:style="'background-image: url('+ card.images[0].fields.file.url +')'"></div>
+                    <a v-if="web" v-for="(card, index) in web" v-on:click="ChangeState(index)" data-toggle="modal"
+                        data-target="#modelId" class="card">
+                        <div class="card-bkg" v-if="card.thumbnail" v-bind:style="'background-image: url('+ card.thumbnail.fields.file.url +')'"></div>
                         <div class="card-body">
-                            <h4 v-if="card.title.length !== 0" v-text="card.title"></h4>
+                            <h4 v-if="card.title" v-text="card.title"></h4>
                         </div>
                     </a>
                 </div>
@@ -106,6 +118,7 @@
     </section>
 
     <script src="../dev/js/bundle.js"></script>
+
 </body>
 
 </html>

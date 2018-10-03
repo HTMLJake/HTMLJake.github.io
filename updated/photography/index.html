@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../dev/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../dev/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../dev/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Jacob Perry Resume</title>
+</head>
+
+<body>
+    <!-- Nav tabs -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <div class="bar bg-dark"></div>
+            <div class="bar bg-dark"></div>
+            <div class="bar bg-dark"></div>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-pills mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../resume">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../web-design">Web Design</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../graphic-design">Graphic Design</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../photography">Photography</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../contact">Contact</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="bkg"></div>
+
+    <section class="gray" id="resume">
+        <div class="spacer">Projects</div>
+        <div class="container-fluid">
+            <div class="row section-title">
+                <h2>Photography Projects</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-5 intro">
+                    <div class="col section-img">
+                        <img src="../dev/img/voxel-jacob.png" class="mx-auto" alt="Vector Resume Design" id="resume-img">
+                    </div>
+                    <h3 class="resume-title">Hello, My Name is</h3>
+                    <h3 class="resume-name"> Jacob Perry </h3>
+                    <h3 class="resume-tagline">Photographer</h3>
+                    <p class="col intro">
+                        Jacob Perry resides in the lush pacific northwest where he enjoys his cold mornings with a warm
+                        cup of apple cider. He started taking photographs from a very young age and loved the ability
+                        to capture moments in time to document his history on this blue marble floating through space.
+                        He is drawn most to photographs of the world around him from mountains veiled is clouds to
+                        ocean waves slapping against the rocky shores of the west coast. Though Jacob is not a world
+                        traveling photographer he does love to take any chance to go on a hike to enjoy the local
+                        beauty around him and inhale the fresh mountain air drenched in petrichor and full of life.
+                    </p>
+                </div>
+                <div id="cards" class="col">
+                        <!-- Modal -->
+                        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                            aria-hidden="true" style="color: #333">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="modelTitleId">{{ photo[state].title }}</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img class="modal-img" v-if="photo[state].images" v-bind:src="img.fields.file.url"
+                                            v-if="photo[state].images" v-for="img in photo[state].images">
+                                        <img class="modal-img" src="../dev/img/bkg-img.jpg" v-else>
+    
+                                        <p class="modal-description">{{ photo[state].description }}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a v-if="photo[state].url" v-bind:href="photo[state].url">
+                                            <button type="button" class="btn btn-primary">Go To Project</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a v-if="photo.length !== 0" v-for="(card, index) in photo" v-on:click="ChangeState(index)"
+                            data-toggle="modal" data-target="#modelId" class="card">
+                            <div class="card-bkg" v-if="card.images" v-bind:style="'background-image: url('+ card.images[0].fields.file.url +')'"></div>
+                            <div class="card-body">
+                                <h4 v-if="card.title" v-text="card.title"></h4>
+                            </div>
+                        </a>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../dev/js/bundle.js"></script>
+</body>
+
+</html>
