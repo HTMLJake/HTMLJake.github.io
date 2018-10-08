@@ -92,13 +92,7 @@
                                     <img class="modal-img" v-if="graphic[state].images" v-bind:src="img.fields.file.url"
                                         v-if="graphic[state].images" v-for="img in graphic[state].images">
                                     <img class="modal-img" src="../dev/img/bkg-img.jpg" v-else>
-
                                     <p class="modal-description">{{ graphic[state].description }}</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a v-bind:href="graphic[state].url">
-                                        <button type="button" class="btn btn-primary">Go To Project</button>
-                                    </a>
                                 </div>
                             </div>
                         </div>

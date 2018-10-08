@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="../dev/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../dev/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../dev/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Jacob Perry Resume</title>
 </head>
@@ -76,45 +77,60 @@
                     </p>
                 </div>
                 <div id="cards" class="col">
-                        <!-- Modal -->
-                        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-                            aria-hidden="true" style="color: #333">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" id="modelTitleId">{{ photo[state].title }}</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img class="modal-img" v-if="photo[state].images" v-bind:src="img.fields.file.url"
-                                            v-if="photo[state].images" v-for="img in photo[state].images">
-                                        <img class="modal-img" src="../dev/img/bkg-img.jpg" v-else>
-    
-                                        <p class="modal-description">{{ photo[state].description }}</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a v-if="photo[state].url" v-bind:href="photo[state].url">
-                                            <button type="button" class="btn btn-primary">Go To Project</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                        aria-hidden="true" style="color: #333">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 v-if="photo[state]" class="modal-title" id="modelTitleId">{{ photo[state].title
+                                        }}</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div data-dismiss="modal" data-target="#modalId">
+                                        <a data-toggle="lightbox" v-for="img in photo[state].images" v-bind:href="img.fields.file.url"
+                                            v-if="photo[state]" data-gallery="example-gallery">
+                                            <img data-toggle="modal" v-bind:src="img.fields.file.url" class="modal-img">
                                         </a>
                                     </div>
+                                    <p class="modal-description">{{ photo[state].description }}</p>
                                 </div>
+
                             </div>
                         </div>
-                        <a v-if="photo.length !== 0" v-for="(card, index) in photo" v-on:click="ChangeState(index)"
-                            data-toggle="modal" data-target="#modelId" class="card">
-                            <div class="card-bkg" v-if="card.images" v-bind:style="'background-image: url('+ card.images[0].fields.file.url +')'"></div>
-                            <div class="card-body">
-                                <h4 v-if="card.title" v-text="card.title"></h4>
-                            </div>
-                        </a>
                     </div>
+                    <a v-if="photo.length !== 0" v-for="(card, index) in photo" v-on:click="ChangeState(index)"
+                        data-toggle="modal" data-target="#modelId" class="card">
+                        <div class="card-bkg" v-if="card" v-bind:style="'background-image: url('+ card.images[0].fields.file.url +')'"></div>
+                        <div class="card-body">
+                            <h4 v-if="card" v-text="card.title"></h4>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="../dev/js/bundle.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+    <script>
+        $(document).on("click", "[data-toggle='lightbox']", function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+    <style>
+        .ekko-lightbox-nav-overlay a span {
+            text-align: left;
+        }
+    </style>
 </body>
 
 </html>

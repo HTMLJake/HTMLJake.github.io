@@ -1,8 +1,6 @@
 const contentful = require("contentful");
 const Vue = require("../js/vue.min.js");
 const $ = require("jquery");
-const popper = require("popper.js");
-const bootstrap = require("bootstrap");
 
 const contentTypes = {
 	WEB_PROJECT: "webProjects",
@@ -75,6 +73,20 @@ let app = new Vue({
 
 	}
 });
+
+let testAwait;
+async function getWeb() {
+	let testAwait = await client.getEntries()
+		.then(function (entries) {
+			return entries.items.filter((entry) => {
+				return entry.sys.contentType.sys.id === contentTypes.WEB_PROJECT;
+			}).map(e => {
+				return e.fields;
+			});
+		});
+}
+getWeb();
+
 
 app.GetWebProjects().then(r => {
 	app.web = r;

@@ -12,7 +12,8 @@ const contentTypes = {
 
 const projectTypes = {
 	GRAPHIC_DESIGN: "Graphic Design",
-	PHOTOGRAPHY: "Photography"
+	PHOTOGRAPHY: "Photography",
+	WEB_DESIGN: "Web Design"
 };
 
 const SPACE_ID = "d9rh82o1q0d9";
@@ -76,6 +77,22 @@ let app = new Vue({
 	}
 });
 
+let testAwait;
+async function getWeb() {
+	let testAwait = await client.getEntries()
+		.then(function (entries) {
+			return entries.items.filter((entry) => {
+				return entry.sys.contentType.sys.id === contentTypes.WEB_PROJECT;
+			}).map(e => {
+				return e.fields;
+			});
+		});
+	console.log(testAwait);
+}
+getWeb();
+console.log(testAwait);
+
+
 app.GetWebProjects().then(r => {
 	app.web = r;
 });
@@ -87,14 +104,6 @@ app.GetImageProjects(projectTypes.PHOTOGRAPHY).then(r => {
 app.GetImageProjects(projectTypes.GRAPHIC_DESIGN).then(r => {
 	app.graphic = r;
 });
-
-/* (function fetchJson () {
-	fetch("../dev/js/data.json").then((r) => {
-		return r.json();
-	}).then(j => {
-		app.cards = j;
-	});
-}()); */
 },{"../js/vue.min.js":2,"bootstrap":3,"contentful":4,"jquery":5,"popper.js":6}],2:[function(require,module,exports){
 (function (global,setImmediate){
 /*!

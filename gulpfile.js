@@ -2,6 +2,7 @@ const gulp = require("gulp");
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
 const browserSync = require("browser-sync").create();
+const imagemin = require("gulp-imagemin");
 
 gulp.task("default", () => {
 	browserSync.init({
@@ -12,6 +13,9 @@ gulp.task("default", () => {
 
 	gulp.watch("./**/*.html").on("change", () => browserSync.reload());
 	gulp.watch("./dev/js/*.js").on("change", () => browserSync.reload());
+	gulp.src("src/images/*")
+		.pipe(imagemin())
+		.pipe(gulp.dest("../dev/img"));
 
 	gulp.watch("./**/sass/**/*.scss", gulp.parallel(["sass"]));
 });
