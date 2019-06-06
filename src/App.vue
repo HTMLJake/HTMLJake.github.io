@@ -1,35 +1,35 @@
 <template>
   <div id="app">
-      <div class="static" v-bind:class="{staticHome: isHome}">
-        <div id="nav">
-          <router-link to="/" class="nav-link">Home</router-link>
-          <router-link to="/project" class="nav-link">Projects</router-link>
-          <router-link to="/resume" class="nav-link">Resume</router-link>
-          <router-link to="/contact" class="nav-link">Contact</router-link>
-        </div>
-        <img src="@/assets/Triangle-logo.svg" alt="Triangle logo" class="logo">
-        <h1>Jacob Perry</h1>
-        <h2>Frontend Developer</h2>
-        <br>
-        <p v-if="isHome" class="about">
-          I reside in the beautiful northwest in Everett, WA, just north of Seattle.
-      I have a passion for a lot of things because I love to learn new things
-      and challenge myself to always be better. I want to be a modern
-      Rennessance? nope … rennisounce? Not quite... *opens google…* so close…
-      Renaissance man. What I lack in years of experience I make up for in
-      creatively thinking about the box (or was it thinking outside the regular
-      hexahedron *closes google*) Either way I like to make stuff, learn things,
-      and speak vague. Some of the hats that I wear are Frontend Developer, Game
-      Developer, Graphic Designer, Musician, and Photographer.
-        </p>
+    <div class="static" v-bind:class="{ staticHome: isHome }">
+      <div id="nav">
+        <router-link to="/" class="nav-link">Home</router-link>
+        <router-link to="/project" class="nav-link">Projects</router-link>
+        <router-link to="/resume" class="nav-link">Resume</router-link>
+        <router-link to="/contact" class="nav-link">Contact</router-link>
       </div>
-    <div class="content" v-bind:class="{contentHome: isHome}">
-      <transition 
-        name="scale" 
+      <img src="@/assets/Triangle-logo.svg" alt="Triangle logo" class="logo" />
+      <h1>Jacob Perry</h1>
+      <h2>Frontend Developer</h2>
+      <br />
+      <p v-if="isHome" class="about">
+        I reside in the beautiful northwest in Everett, WA, just north of
+        Seattle. I have a passion for a lot of things because I love to learn
+        new things and challenge myself to always be better. I want to be a
+        modern Rennessance? nope … rennisounce? Not quite... *opens google…* so
+        close… Renaissance man. What I lack in years of experience I make up for
+        in creatively thinking about the box (or was it thinking outside the
+        regular hexahedron *closes google*) Either way I like to make stuff,
+        learn things, and speak vague. Some of the hats that I wear are Frontend
+        Developer, Game Developer, Graphic Designer, Musician, and Photographer.
+      </p>
+    </div>
+    <div class="content" v-bind:class="{ contentHome: isHome }">
+      <transition
+        name="scale"
         enter-active-class="animated fadeIn"
         exit-active-class="animated fadeOut"
       >
-        <router-view/>
+        <router-view />
       </transition>
     </div>
   </div>
@@ -40,25 +40,24 @@ export default {
   data() {
     return {
       isHome: true
-    }
+    };
   },
   beforeUpdate() {
-    if(this.$route.path === "/") {
+    if (this.$route.path === "/") {
       this.$data.isHome = true;
     } else {
       this.$data.isHome = false;
     }
   },
   beforeMount() {
-    if(this.$route.path === "/") {
+    if (this.$route.path === "/") {
       this.$data.isHome = true;
     } else {
       this.$data.isHome = false;
     }
   }
-}
+};
 </script>
-
 
 <style lang="scss">
 body,

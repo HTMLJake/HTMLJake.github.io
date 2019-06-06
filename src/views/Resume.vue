@@ -41,7 +41,6 @@
 </template>
 
 <style lang="scss" scoped>
-
 .left {
   text-align: left;
 }
@@ -94,6 +93,6 @@ export default {
         }
       ]
     };
-  },
+  }
 };
 </script>
