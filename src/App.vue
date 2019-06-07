@@ -1,36 +1,57 @@
 <template>
-  <div id="app">
-    <div class="static" v-bind:class="{ staticHome: isHome }">
-      <div id="nav">
-        <router-link to="/" class="nav-link">Home</router-link>
-        <router-link to="/project" class="nav-link">Projects</router-link>
-        <router-link to="/resume" class="nav-link">Resume</router-link>
-        <router-link to="/contact" class="nav-link">Contact</router-link>
+  <div id="app container">
+    <div class="row no-gutters">
+      <div class="static" :class="[isHome ? 'col-lg-6' : 'col-lg-4']">
+        <div id="nav">
+          <router-link to="/" class="nav-link">Home</router-link>
+          <router-link to="/project" class="nav-link">Projects</router-link>
+          <router-link to="/resume" class="nav-link">Resume</router-link>
+          <router-link to="/contact" class="nav-link">Contact</router-link>
+        </div>
+        <div class="centered">
+          <img
+            src="@/assets/Triangle-logo.svg"
+            alt="Triangle logo"
+            class="logo"
+          />
+          <h1>Jacob Perry</h1>
+          <h2>Frontend Developer</h2>
+          <br />
+          <p v-if="isHome" class="about animated fadeIn delay-300ms">
+            I reside in the beautiful northwest in Everett, WA, just north of
+            Seattle. I have a passion for a lot of things because I love to
+            learn new things and challenge myself to always be better. I want to
+            be a modern Rennessance? nope … rennisounce? Not quite... *opens
+            google…* so close… Renaissance man. What I lack in years of
+            experience I make up for in creatively thinking about the box (or
+            was it thinking outside the regular hexahedron *closes google*)
+            Either way I like to make stuff, learn things, and speak vague. Some
+            of the hats that I wear are Frontend Developer, Game Developer,
+            Graphic Designer, Musician, and Photographer.
+          </p>
+          <p v-else class="about animated fadeOut faster">
+            I reside in the beautiful northwest in Everett, WA, just north of
+            Seattle. I have a passion for a lot of things because I love to
+            learn new things and challenge myself to always be better. I want to
+            be a modern Rennessance? nope … rennisounce? Not quite... *opens
+            google…* so close… Renaissance man. What I lack in years of
+            experience I make up for in creatively thinking about the box (or
+            was it thinking outside the regular hexahedron *closes google*)
+            Either way I like to make stuff, learn things, and speak vague. Some
+            of the hats that I wear are Frontend Developer, Game Developer,
+            Graphic Designer, Musician, and Photographer.
+          </p>
+        </div>
       </div>
-      <img src="@/assets/Triangle-logo.svg" alt="Triangle logo" class="logo" />
-      <h1>Jacob Perry</h1>
-      <h2>Frontend Developer</h2>
-      <br />
-      <p v-if="isHome" class="about">
-        I reside in the beautiful northwest in Everett, WA, just north of
-        Seattle. I have a passion for a lot of things because I love to learn
-        new things and challenge myself to always be better. I want to be a
-        modern Rennessance? nope … rennisounce? Not quite... *opens google…* so
-        close… Renaissance man. What I lack in years of experience I make up for
-        in creatively thinking about the box (or was it thinking outside the
-        regular hexahedron *closes google*) Either way I like to make stuff,
-        learn things, and speak vague. Some of the hats that I wear are Frontend
-        Developer, Game Developer, Graphic Designer, Musician, and Photographer.
-      </p>
-    </div>
-    <div class="content" v-bind:class="{ contentHome: isHome }">
-      <transition
-        name="scale"
-        enter-active-class="animated fadeIn"
-        exit-active-class="animated fadeOut"
-      >
-        <router-view />
-      </transition>
+      <div class="content" :class="[isHome ? 'col-lg-6' : 'col-lg-8']">
+        <transition
+          name="scale"
+          enter-active-class="animated fadeIn"
+          exit-active-class="animated fadeOut"
+        >
+          <router-view />
+        </transition>
+      </div>
     </div>
   </div>
 </template>
@@ -64,6 +85,7 @@ body,
 html {
   margin: 0px;
   padding: 0px;
+  font-family: $--main-font;
 }
 
 h1,
@@ -74,17 +96,38 @@ h3 {
 
 .content {
   transition: 0.4s ease;
+  transition-delay: 500ms;
   width: 70vw;
   float: right;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
   margin: 0px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.delay-500ms {
+  animation-delay: 500ms;
+}
+
+.delay-300ms {
+  animation-delay: 300ms;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  padding: 2vw;
   box-sizing: border-box;
 }
 
 .static {
   transition: 0.4s ease;
+  transition-delay: 500ms;
   position: fixed;
   width: 30vw;
   background: #222222;
@@ -95,7 +138,7 @@ h3 {
   color: $--color-light;
   h2 {
     font-family: $--main-font;
-    color: $--color-primary;
+    color: $primary-color;
     margin: 0px;
     font-size: 100%;
     letter-spacing: 8px;
@@ -110,35 +153,26 @@ h3 {
   }
 }
 
-.display2 {
-  font-family: $--main-font;
-  font-size: 6em;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 15px auto;
-}
-
 .heading {
-  color: $--color-primary;
+  color: $primary-color;
   font-weight: 100;
-  font-size: 4em;
-  margin: 15px 0px 50px 0px;
 }
 
 .about {
-  padding: 15px;
+  padding: 15px 55px;
 }
 
 .staticHome {
+  transition-delay: 500ms;
   transition: 0.4s;
   width: 45vw;
 }
 
 .contentHome {
+  transition-delay: 500ms;
   transition: 0.4s;
   width: 55vw;
-  //background: $--color-primary;
+  //background: $primary-color;
 }
 
 .logo {
@@ -147,16 +181,7 @@ h3 {
 }
 
 .nav-link {
-  margin-right: 15px;
-  margin-left: 15px;
   font-family: $--main-font;
-}
-
-#app {
-  font-family: $--main-font;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
 }
 
 #nav {
@@ -164,13 +189,10 @@ h3 {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin: 15px 0px;
   a {
-    transition: 0.5s;
     color: $--color-light;
     text-decoration: none;
     font-weight: lighter;
-    width: 3em;
     &.router-link-exact-active {
       font-weight: 900;
       color: lighten($--color-light, 50%);
@@ -179,10 +201,5 @@ h3 {
       color: lighten($--color-light, 20%);
     }
   }
-}
-
-.box {
-  padding: 55px 50px;
-  box-sizing: border-box;
 }
 </style>

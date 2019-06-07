@@ -1,6 +1,8 @@
 <template>
-  <div class="home">
-    <div class="testBackground"></div>
+  <div class="container">
+    <div class="row">
+      <div class="offset-lg-1 col-10 bg-primary">Do you love?</div>
+    </div>
   </div>
 </template>
 
@@ -8,7 +10,7 @@
 .home {
   width: 100%;
   height: 100%;
-  background: $--color-primary;
+  background: $primary-color;
 }
 
 .testBackground {

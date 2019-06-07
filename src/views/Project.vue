@@ -1,60 +1,63 @@
 <template>
-  <div class="box">
-    <h1 class="display2">Projects</h1>
+  <div class="container">
+    <div class="row">
+      <h1 class="display-1 col-12">Projects</h1>
+    </div>
 
     <!-- 
     ---   TODO: Move these into a seperate vue template and load the templates instead.
-    ---   TODO: Create modal vue template that opens to view images larger.
+    ---   TODO: Create modal vue template that opens to view images larger. **TRANSFER ALL TO BOOTSTAP
     -->
 
-    <el-dialog :visible.sync="imageModalVisible">
-      <el-image :src="imageURL" alt="Image not loaded" fit="contain">
-      </el-image>
-    </el-dialog>
+    <b-modal id="imgModal" size="lg" centered hide-footer>
+      <b-img :src="imageURL" alt="Image not loaded" fluid></b-img>
+    </b-modal>
 
-    <p class="heading">Web Design</p>
-    <div v-for="(item, i) in web" :key="i + 'a'" class="--p-relative">
+    <p class="h2 heading ">Web Design</p>
+    <div v-for="(item, i) in web" :key="i + 'a'" class="position-relative">
       <div class="timeline-line"></div>
-      <div class="timeline-dot web-dot"></div>
-      <span class="flex-sub-header">
-        <h3 class="sub-heading">{{ item.title }}</h3>
-        <span style="margin: 0px 5px;"> - </span>
-        <a :href="item.url">{{ item.title }}</a>
-      </span>
-      <p class="text-left">{{ item.description }}</p>
-      <el-image
-        :src="item.thumbnail.fields.file.url + '?fm=jpg&fl=progressive'"
-        :alt="item.thumbnail.fields.title"
-        class="web"
-        fit="contain"
-        style="pointer: clicker"
-        @click="
-          imageModalVisible = true;
-          imageURL = item.thumbnail.fields.file.url;
-        "
-      ></el-image>
-      <br />
+      <div class="timeline-dot"></div>
+      <div class="row no-gutters">
+        <span class="offset-1 col-12 text-left my-3">
+          <span class="h3 font-weight-bold text-uppercase align-middle">{{
+            item.title
+          }}</span>
+          <span style="margin: 0px 5px;" class="align-middle"> - </span>
+          <a :href="item.url" class="align-middle">{{ item.title }}</a>
+        </span>
+      </div>
+      <div class="row">
+        <p class="offset-1 text-left col-7 align-middle">
+          {{ item.description }}
+        </p>
+        <div class="col-lg-3">
+          <img
+            :src="item.thumbnail.fields.file.url + '?fm=jpg&fl=progressive'"
+            :alt="item.thumbnail.fields.title"
+            class="img"
+            style="cursor: pointer"
+            v-b-modal.imgModal
+            @click="imageURL = item.thumbnail.fields.file.url"
+          />
+        </div>
+        <br />
+      </div>
     </div>
 
     <p class="heading">Graphic Design</p>
     <div v-for="(item, i) in design" :key="i + 'b'" class="--p-relative">
-      <div class="timeline-line"></div>
-      <div class="timeline-dot design-dot"></div>
       <h3 class="sub-heading">{{ item.title }}</h3>
       <p class="text-left">{{ item.description }}</p>
       <div class="flexImg">
-        <el-image
+        <img
           v-for="(item, i) in item.images"
           :key="i"
           :src="item.fields.file.url + '?fm=jpg&fl=progressive'"
           class="testImg"
-          @click="
-            imageModalVisible = true;
-            imageURL = item.fields.file.url;
-          "
-          style="pointer: clicker"
-          fit="contain"
-        ></el-image>
+          @click="imageURL = item.fields.file.url"
+          style="cursor: pointer"
+          v-b-modal.imgModal
+        />
       </div>
       <br />
     </div>
@@ -65,19 +68,16 @@
       <div class="timeline-dot"></div>
       <h3 class="sub-heading">{{ item.title }}</h3>
       <p class="text-left">{{ item.description }}</p>
-      <div class="flexImg">
-        <el-image
+      <div class="flexImg col-4">
+        <img
           v-for="(item, i) in item.images"
           :key="i"
           :src="item.fields.file.url + '?fm=jpg&fl=progressive'"
           class="testImg"
-          @click="
-            imageModalVisible = true;
-            imageURL = item.fields.file.url;
-          "
-          style="pointer: clicker"
-          fit="contain"
-        ></el-image>
+          @click="imageURL = item.fields.file.url"
+          style="cursor: pointer"
+          v-b-modal.imgModal
+        />
       </div>
     </div>
     <br />
@@ -117,6 +117,11 @@ export default {
   padding: 5px;
 }
 
+.img {
+  height: auto;
+  width: 100%;
+}
+
 .testImg {
   max-height: 150px;
   max-width: 150px;
@@ -142,20 +147,21 @@ export default {
 
 .timeline-line {
   position: absolute;
-  left: -20px;
-  height: 85%;
-  top: 28px;
+  left: 20px;
+  height: 105%;
+  top: 25px;
   border: 2px solid #e4e4e4;
 }
 
 .timeline-dot {
   border-radius: 50%;
   position: absolute;
-  border: 5px solid $--color-primary;
-  left: -30px;
-  top: 5px;
-  height: 15px;
-  width: 15px;
+  background: $primary-color;
+  border: 5px solid white;
+  left: 10px;
+  top: 25px;
+  height: 25px;
+  width: 25px;
 }
 
 .web-dot {

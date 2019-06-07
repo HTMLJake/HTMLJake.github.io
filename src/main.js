@@ -1,10 +1,12 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import "./plugins/element.js";
-import VueMouseParallax from "vue-mouse-parallax";
+import BootstrapVue from "bootstrap-vue";
 
-Vue.use(VueMouseParallax);
+import "bootstrap";
+import "./styles/custom-theme.scss";
+
+Vue.use(BootstrapVue);
 
 var Contentful = require("contentful");
 //import Contentful from "contentful";

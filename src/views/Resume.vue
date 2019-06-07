@@ -1,10 +1,19 @@
 <template>
-  <div class="box">
-    <span class="display2">Resume</span>
+  <div class="container">
+    <span class="display-1">Resume</span>
 
     <div>
       <h2 class="heading">Work History</h2>
 
+      <rk-timeline
+        v-for="(job, i) in work"
+        :key="i"
+        :date="job.dates"
+        :title="job.jobTitle"
+        :description="job.description"
+      />
+
+      <!-- 
       <el-timeline class="left">
         <el-timeline-item
           v-for="(job, index) in work"
@@ -35,7 +44,9 @@
           <h4>{{ job.location }}</h4>
           <p>{{ job.description }}</p>
         </el-timeline-item>
-      </el-timeline>
+      </el-timeline> 
+      
+-->
     </div>
   </div>
 </template>
@@ -46,7 +57,7 @@
 }
 
 .el-timeline-item__tail {
-  border-color: $--color-primary !important;
+  border-color: $primary-color !important;
 }
 
 .centered {
@@ -63,7 +74,12 @@ h4 {
 </style>
 
 <script>
+import RkTimeline from "@/components/RkTimeline.vue";
 export default {
+  components: {
+    RkTimeline
+  },
+
   data() {
     return {
       work: [

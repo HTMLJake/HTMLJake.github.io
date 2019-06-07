@@ -1,11 +1,7 @@
 <template>
   <div class="home">
     <div class="testBackground">
-      <parallax-container>
-        <parallax-element :parallaxStrength="150" :type="'translation'">
-          <img src="@/assets/images/Mountain.jpg" alt="Wizard Narwahl" />
-        </parallax-element>
-      </parallax-container>
+      <img src="@/assets/images/Mountain.jpg" alt="Wizard Narwahl" />
     </div>
   </div>
 </template>
@@ -14,7 +10,7 @@
 .home {
   width: 100%;
   height: 100%;
-  background: $--color-primary;
+  background: $primary-color;
 }
 
 .testBackground {
