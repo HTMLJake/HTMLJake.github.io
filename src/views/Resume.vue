@@ -13,7 +13,7 @@
         :description="job.description"
       />
 
-      <!-- 
+      <!--
       <el-timeline class="left">
         <el-timeline-item
           v-for="(job, index) in work"
@@ -44,8 +44,8 @@
           <h4>{{ job.location }}</h4>
           <p>{{ job.description }}</p>
         </el-timeline-item>
-      </el-timeline> 
-      
+      </el-timeline>
+
 -->
     </div>
   </div>

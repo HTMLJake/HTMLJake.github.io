@@ -4,7 +4,7 @@
       <h1 class="display-1 col-12">Projects</h1>
     </div>
 
-    <!-- 
+    <!--
     ---   TODO: Move these into a seperate vue template and load the templates instead.
     ---   TODO: Create modal vue template that opens to view images larger. **TRANSFER ALL TO BOOTSTAP
     -->
@@ -13,12 +13,13 @@
       <b-img :src="imageURL" alt="Image not loaded" fluid></b-img>
     </b-modal>
 
+    <!-- TODO: Make this a component -->
     <p class="h2 heading ">Web Design</p>
     <div v-for="(item, i) in web" :key="i + 'a'" class="position-relative">
       <div class="timeline-line"></div>
       <div class="timeline-dot"></div>
       <div class="row no-gutters">
-        <span class="offset-1 col-12 text-left my-3">
+        <span class="offset-1 col-12 text-left mt-4 mb-2">
           <span class="h3 font-weight-bold text-uppercase align-middle">{{
             item.title
           }}</span>
@@ -30,7 +31,7 @@
         <p class="offset-1 text-left col-7 align-middle">
           {{ item.description }}
         </p>
-        <div class="col-lg-3">
+        <div class="col-lg-3 offset-md-1 offset-sm-1 offset-xs-1 col-8">
           <img
             :src="item.thumbnail.fields.file.url + '?fm=jpg&fl=progressive'"
             :alt="item.thumbnail.fields.title"
@@ -44,7 +45,7 @@
       </div>
     </div>
 
-    <p class="heading">Graphic Design</p>
+    <!-- <p class="heading">Graphic Design</p>
     <div v-for="(item, i) in design" :key="i + 'b'" class="--p-relative">
       <h3 class="sub-heading">{{ item.title }}</h3>
       <p class="text-left">{{ item.description }}</p>
@@ -80,7 +81,7 @@
         />
       </div>
     </div>
-    <br />
+    <br /> -->
   </div>
 </template>
 
@@ -149,7 +150,7 @@ export default {
   position: absolute;
   left: 20px;
   height: 105%;
-  top: 25px;
+  top: 35px;
   border: 2px solid #e4e4e4;
 }
 
@@ -159,7 +160,7 @@ export default {
   background: $primary-color;
   border: 5px solid white;
   left: 10px;
-  top: 25px;
+  top: 35px;
   height: 25px;
   width: 25px;
 }
