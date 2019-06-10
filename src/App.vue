@@ -19,8 +19,8 @@
             alt="Triangle logo"
             class="logo"
           />
-          <h1>Jacob Perry</h1>
-          <h2>Frontend Developer</h2>
+          <h1 class="_name">Jacob Perry</h1>
+          <h2 class="_title">Frontend Developer</h2>
           <br />
         </div>
         <div id="nav">

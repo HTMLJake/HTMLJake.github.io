@@ -1,12 +1,21 @@
 <template>
-  <div class="row timeline my-2 text-left">
+  <div class="row position-relative timeline my-2 text-left">
     <div class="timeline-tail"></div>
     <div class="timeline-head"></div>
 
     <div class="col-auto offset-1">
-      <p v-if="date" class="date">{{ date }}</p>
-      <p v-if="title" class="h5 font-weight-bold">{{ title }}</p>
-      <p v-if="description">{{ description }}</p>
+      <p v-if="title" class="h5 font-weight-bold mb-0">{{ title }}</p>
+      <p v-if="subHeading" class="sub-heading text-primary font-weight-bold">
+        {{ subHeading }}
+      </p>
+      <a
+        v-if="link"
+        class="sub-heading text-primary font-weight-bold"
+        :href="link"
+      >
+        {{ title }}
+      </a>
+      <p v-if="description" class="description">{{ description }}</p>
       <slot></slot>
     </div>
 
@@ -20,17 +29,17 @@
 export default {
   name: "RynTimeline",
   props: {
-    date: String,
+    subHeading: String,
     title: String,
-    description: String
+    description: String,
+    link: String
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .timeline {
-  position: relative;
-  max-width: 850px;
+  max-width: 85%;
 }
 
 .timeline-tail {
@@ -53,8 +62,11 @@ export default {
   width: 25px;
 }
 
-.date {
+.description {
+  white-space: pre-wrap;
+}
+
+.sub-heading {
   margin: 0px;
-  font-size: 0.8rem;
 }
 </style>

@@ -13,25 +13,18 @@
       <b-img :src="imageURL" alt="Image not loaded" fluid></b-img>
     </b-modal>
 
-    <!-- TODO: Make this a component -->
-    <p class="h2 heading ">Web Design</p>
-    <div v-for="(item, i) in web" :key="i + 'a'" class="position-relative">
-      <div class="timeline-line"></div>
-      <div class="timeline-dot"></div>
-      <div class="row no-gutters">
-        <span class="offset-1 col-12 text-left mt-4 mb-2">
-          <span class="h3 font-weight-bold text-uppercase align-middle">
-            {{ item.title }}
-          </span>
-          <br />
-          <a :href="item.url" class="align-middle">{{ item.title }}</a>
-        </span>
-      </div>
+    <p class="h2 heading">Web Design</p>
+    <rk-timeline
+      v-for="(item, i) in web"
+      :key="i + 'web'"
+      :title="item.title"
+      :link="item.url"
+    >
       <div class="row">
         <p class="offset-1 text-left col-lg-6 col-10 align-middle">
           {{ item.description }}
         </p>
-        <div class="col-lg-3 offset-1 col-8">
+        <div class="col-lg-4 offset-1 col-8">
           <img
             :src="item.thumbnail.fields.file.url + '?fm=jpg&fl=progressive'"
             :alt="item.thumbnail.fields.title"
@@ -43,12 +36,15 @@
         </div>
         <br />
       </div>
-    </div>
+    </rk-timeline>
 
-    <!-- <p class="heading">Graphic Design</p>
-    <div v-for="(item, i) in design" :key="i + 'b'" class="--p-relative">
-      <h3 class="sub-heading">{{ item.title }}</h3>
-      <p class="text-left">{{ item.description }}</p>
+    <p class="h2 heading">Graphic Design</p>
+    <rk-timeline
+      v-for="(item, i) in design"
+      :key="i + 'design'"
+      :title="item.title"
+      :description="item.description"
+    >
       <div class="flexImg">
         <img
           v-for="(item, i) in item.images"
@@ -60,16 +56,16 @@
           v-b-modal.imgModal
         />
       </div>
-      <br />
-    </div>
+    </rk-timeline>
 
-    <p class="heading">Photography</p>
-    <div v-for="(item, i) in photos" :key="i + 'c'" class="--p-relative">
-      <div class="timeline-line"></div>
-      <div class="timeline-dot"></div>
-      <h3 class="sub-heading">{{ item.title }}</h3>
-      <p class="text-left">{{ item.description }}</p>
-      <div class="flexImg col-4">
+    <p class="h2 heading">Photography</p>
+    <rk-timeline
+      v-for="(item, i) in photos"
+      :key="i + 'photots'"
+      :title="item.title"
+      :description="item.description"
+    >
+      <div class="flexImg">
         <img
           v-for="(item, i) in item.images"
           :key="i"
@@ -80,13 +76,16 @@
           v-b-modal.imgModal
         />
       </div>
-    </div>
-    <br /> -->
+    </rk-timeline>
   </div>
 </template>
 
 <script>
+import RkTimeline from "@/components/RkTimeline.vue";
 export default {
+  components: {
+    RkTimeline
+  },
   data() {
     return {
       design: undefined,
