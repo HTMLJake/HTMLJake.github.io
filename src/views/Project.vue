@@ -21,10 +21,10 @@
       :link="item.url"
     >
       <div class="row">
-        <p class="offset-1 text-left col-lg-6 col-10 align-middle">
+        <p class="text-left col-lg-7 col-12 align-middle">
           {{ item.description }}
         </p>
-        <div class="col-lg-4 offset-1 col-8">
+        <div class="col-lg-4 offset-1 col-11">
           <img
             :src="item.thumbnail.fields.file.url + '?fm=jpg&fl=progressive'"
             :alt="item.thumbnail.fields.title"
@@ -50,7 +50,7 @@
           v-for="(item, i) in item.images"
           :key="i"
           :src="item.fields.file.url + '?fm=jpg&fl=progressive'"
-          class="testImg"
+          class="testImg col-lg-4 col-md-3"
           @click="imageURL = item.fields.file.url"
           style="cursor: pointer"
           v-b-modal.imgModal
@@ -70,7 +70,7 @@
           v-for="(item, i) in item.images"
           :key="i"
           :src="item.fields.file.url + '?fm=jpg&fl=progressive'"
-          class="testImg"
+          class="testImg col-lg-4 col-md-3"
           @click="imageURL = item.fields.file.url"
           style="cursor: pointer"
           v-b-modal.imgModal
@@ -128,62 +128,15 @@ export default {
   padding: 5px;
 }
 
-.flex-sub-header {
-  display: flex;
-  align-items: center;
-}
-
 .text-left {
   text-align: left;
 }
 
 .flexImg {
   display: flex;
-  flex: 33%;
+  flex: 20%;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: baseline;
-}
-
-.timeline-line {
-  position: absolute;
-  left: 10px;
-  height: 105%;
-  top: 35px;
-  border: 2px solid #e4e4e4;
-}
-
-.timeline-dot {
-  border-radius: 50%;
-  position: absolute;
-  background: $primary-color;
-  border: 5px solid white;
-  top: 35px;
-  height: 25px;
-  width: 25px;
-}
-
-.web-dot {
-  border-color: #e22626;
-}
-
-.design-dot {
-  border-color: #048f22;
-}
-
-.sub-heading {
-  text-align: left;
-  font-weight: 900;
-  text-transform: uppercase;
-  margin: 0px;
-}
-
-.web {
-  height: 250px;
-}
-
-br {
-  height: 18px;
-  width: 100%;
 }
 </style>

@@ -44,10 +44,10 @@ export default {
 
 .timeline-tail {
   position: absolute;
-  left: 35px;
-  height: 100%;
+  left: 15px;
+  height: 95%;
   min-height: 50px;
-  top: px;
+  top: 5px;
   border: 2px solid #e4e4e4;
 }
 
@@ -56,8 +56,8 @@ export default {
   position: absolute;
   background: $primary-color;
   border: 5px solid white;
-  left: 25px;
-  top: 0px;
+  left: 5px;
+  top: 5px;
   height: 25px;
   width: 25px;
 }
