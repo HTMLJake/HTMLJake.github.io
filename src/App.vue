@@ -85,7 +85,7 @@ export default {
     isMobile() {
       return this.$mq === "mobile";
     },
-    hideSide() {
+    hideSidebar() {
       this.showSidebar = false;
     }
   }
