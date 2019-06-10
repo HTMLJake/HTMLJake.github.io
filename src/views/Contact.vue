@@ -9,7 +9,7 @@
         <div class="animated fadeOut slow delay-50 infinite ml-1">.</div>
         <div class="animated fadeOut slow delay-75 infinite ml-1">.</div>
       </div>
-      <p class="h4">This page is still under development.</p>
+      <p class="text-center">This page is still under development.</p>
     </div>
   </div>
 </template>

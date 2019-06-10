@@ -2,14 +2,20 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import BootstrapVue from "bootstrap-vue";
+import mq from "vue-mq";
 
 import "bootstrap";
 import "./styles/custom-theme.scss";
 
 Vue.use(BootstrapVue);
+Vue.use(mq, {
+  breakpoints: {
+    mobile: 990,
+    desktop: Infinity
+  }
+});
 
 var Contentful = require("contentful");
-//import Contentful from "contentful";
 
 Vue.config.productionTip = false;
 Vue.prototype.$SPACE_ID = "d9rh82o1q0d9";

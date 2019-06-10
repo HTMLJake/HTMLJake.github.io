@@ -20,18 +20,18 @@
       <div class="timeline-dot"></div>
       <div class="row no-gutters">
         <span class="offset-1 col-12 text-left mt-4 mb-2">
-          <span class="h3 font-weight-bold text-uppercase align-middle">{{
-            item.title
-          }}</span>
-          <span style="margin: 0px 5px;" class="align-middle"> - </span>
+          <span class="h3 font-weight-bold text-uppercase align-middle">
+            {{ item.title }}
+          </span>
+          <br />
           <a :href="item.url" class="align-middle">{{ item.title }}</a>
         </span>
       </div>
       <div class="row">
-        <p class="offset-1 text-left col-7 align-middle">
+        <p class="offset-1 text-left col-lg-6 col-10 align-middle">
           {{ item.description }}
         </p>
-        <div class="col-lg-3 offset-md-1 offset-sm-1 offset-xs-1 col-8">
+        <div class="col-lg-3 offset-1 col-8">
           <img
             :src="item.thumbnail.fields.file.url + '?fm=jpg&fl=progressive'"
             :alt="item.thumbnail.fields.title"
@@ -148,7 +148,7 @@ export default {
 
 .timeline-line {
   position: absolute;
-  left: 20px;
+  left: 10px;
   height: 105%;
   top: 35px;
   border: 2px solid #e4e4e4;
@@ -159,7 +159,6 @@ export default {
   position: absolute;
   background: $primary-color;
   border: 5px solid white;
-  left: 10px;
   top: 35px;
   height: 25px;
   width: 25px;

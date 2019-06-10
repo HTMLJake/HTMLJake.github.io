@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="row">
-      <p class="text-center h1 font-weight-bold col-12 heading">Hey there!</p>
+      <p class="text-center h1 font-weight-bold col-12 heading">HEY THERE!</p>
     </div>
     <div class="about-text">
       <p>

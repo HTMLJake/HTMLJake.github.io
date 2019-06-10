@@ -8,7 +8,8 @@
       <div
         :class="[
           isHome ? 'col-lg-6' : 'col-lg-4',
-          showSidebar ? 'showSidebar' : 'hideSidebar'
+          showSidebar ? 'showSidebar' : 'hideSidebar',
+          isMobile() ? '' : (this.showSidebar = true)
         ]"
         class="static col-md-12"
       >
@@ -21,29 +22,29 @@
           <h1>Jacob Perry</h1>
           <h2>Frontend Developer</h2>
           <br />
-          <!-- <p
-            class="about text-center animated"
-            :class="[
-              isHome ? 'fadeIn delay-250ms' : 'font-shrink fadeOut fastest'
-            ]"
-          >
-            I reside in the beautiful northwest in Everett, WA, just north of
-            Seattle. I have a passion for a lot of things because I love to
-            learn new things and challenge myself to always be better. I want to
-            be a modern Rennessance? nope … rennisounce? Not quite... *opens
-            google…* so close… Renaissance man. What I lack in years of
-            experience I make up for in creatively thinking about the box (or
-            was it thinking outside the regular hexahedron *closes google*)
-            Either way I like to make stuff, learn things, and speak vague. Some
-            of the hats that I wear are Frontend Developer, Game Developer,
-            Graphic Designer, Musician, and Photographer.
-          </p> -->
         </div>
         <div id="nav">
-          <router-link to="/" class="nav-link">Home</router-link>
-          <router-link to="/project" class="nav-link">Projects</router-link>
-          <router-link to="/resume" class="nav-link">Resume</router-link>
-          <router-link to="/contact" class="nav-link">Contact</router-link>
+          <router-link to="/" class="nav-link" @click.native="hideSidebar()"
+            >Home</router-link
+          >
+          <router-link
+            to="/project"
+            class="nav-link"
+            @click.native="hideSidebar()"
+            >Projects</router-link
+          >
+          <router-link
+            to="/resume"
+            class="nav-link"
+            @click.native="hideSidebar()"
+            >Resume</router-link
+          >
+          <router-link
+            to="/contact"
+            class="nav-link"
+            @click.native="hideSidebar()"
+            >Contact</router-link
+          >
         </div>
       </div>
       <div
@@ -71,25 +72,18 @@ export default {
       showSidebar: true
     };
   },
-  beforeUpdate() {
-    if (this.$route.path === "/") {
-      this.$data.isHome = true;
-    } else {
-      this.$data.isHome = false;
-    }
-  },
-  beforeMount() {
-    if (this.$route.path === "/") {
-      this.$data.isHome = true;
-    } else {
-      this.$data.isHome = false;
-    }
-  },
   watch: {
     $route() {
-      if (window.innerWidth < 990) {
-        this.showSidebar = false;
+      if (this.$route.path === "/") {
+        this.$data.isHome = true;
+      } else {
+        this.$data.isHome = false;
       }
+    }
+  },
+  methods: {
+    isMobile() {
+      return this.$mq === "mobile";
     }
   }
 };
@@ -115,6 +109,12 @@ html {
   position: fixed;
   z-index: 50;
   font-size: 25px;
+}
+
+@media (min-width: 990px) {
+  .menu-button {
+    display: none;
+  }
 }
 
 h1,
@@ -143,15 +143,14 @@ h3 {
 }
 
 .hideSidebar {
-  transform: translateX(-1000px);
+  transform: translateX(-105vw);
 }
 
 .content {
   transition: 0.4s ease;
   width: 70vw;
   float: right;
-  height: calc(100vh - 56px);
-  top: 56px;
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -159,24 +158,13 @@ h3 {
   box-sizing: border-box;
 }
 
-.centered {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  padding: 2vw;
-  box-sizing: border-box;
-}
-
 .static {
   z-index: 5;
   transition: 0.65s ease-in-out;
   position: fixed !important;
-  top: 56px;
+  height: 100vh;
   width: 30vw;
   background: $--color-dark;
-  height: calc(100vh - 56px);
   box-sizing: border-box;
   margin: 0px;
   padding: 15px;
@@ -198,6 +186,28 @@ h3 {
     margin: 0px;
     text-align: center;
   }
+}
+
+@media (max-width: 990px) {
+  .static {
+    top: 56px;
+    height: calc(100vh - 55px);
+  }
+
+  .content {
+    top: 56px;
+    height: calc(100vh - 55px);
+  }
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 2vw;
+  box-sizing: border-box;
 }
 
 .heading {
