@@ -1,16 +1,33 @@
 <template>
-  <div class="container w-100 h-100">
-    <div
-      class="d-flex flex-column align-items-center justify-content-center w-100 h-100"
-    >
-      <div class="text-primary d-flex flex-row mb-5 h2">
-        Work in Progress
-        <div class="animated fadeOut slow delay-25 infinite ml-1">.</div>
-        <div class="animated fadeOut slow delay-50 infinite ml-1">.</div>
-        <div class="animated fadeOut slow delay-75 infinite ml-1">.</div>
+  <div class="container w-100 h-100 align-items-center">
+    <p class="display-1 text-center my-5">Let's Talk!</p>
+    <form action="https://formspree.io/perryjacob@outlook.com" method="POST" class="w-100 margin-auto ">
+      <div class="row d-flex flex-row justify-content-center">
+        <div class="form-group col-12 col-lg-4">
+          <label for="nameInput">Name:</label>
+          <input type="text" name="Name" id="nameInput" class="form-control" placeholder="John Doe">
+        </div>
+        <div class="form-group col-12 col-lg-4">
+          <label for="emailInput">Email:</label>
+          <input type="email" name="Email" id="emailInput" class="form-control" placeholder="john.doe@example.com">
+        </div>
       </div>
-      <p class="text-center">This page is still under development.</p>
-    </div>
+
+      <div class="row d-flex flex-row justify-content-center">
+        <div class="form-group col-12 col-lg-8">
+          <label for="messageInput">Message:</label>
+          <textarea
+            type="text"
+            placeholder="You're Hired!"
+            name="Message"
+            id="messageInput"
+            rows="10"
+            class="form-control">
+          </textarea>
+          <input type="submit" value="Send" class="btn btn-primary mt-3 w-25">
+        </div>
+      </div>
+    </form>
   </div>
 </template>
 
