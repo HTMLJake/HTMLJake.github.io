@@ -1,5 +1,5 @@
 <template>
-  <div class="row position-relative timeline my-2 text-left">
+  <div class="row position-relative timeline my-2 text-left mt-4">
     <div class="timeline-tail"></div>
     <div class="timeline-head"></div>
 
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: "RynTimeline",
+  name: "RkTimeline",
   props: {
     subHeading: String,
     title: String,
@@ -45,7 +45,7 @@ export default {
 .timeline-tail {
   position: absolute;
   left: 15px;
-  height: 95%;
+  height: 100%;
   min-height: 50px;
   top: 5px;
   border: 2px solid #e4e4e4;

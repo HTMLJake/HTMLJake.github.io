@@ -11,15 +11,15 @@
     <!-- <button @click="log(getMqAsNumber())">Tester Button</button> -->
 
     <!--
-    ---   TODO: Move these into a seperate vue template and load the templates instead.
-    ---   TODO: Create modal vue template that opens to view images larger. **TRANSFER ALL TO BOOTSTAP
+    ---   TODO: Move these into a separate vue template and load the templates instead.
+    ---   TODO: Create modal vue template that opens to view images larger. **TRANSFER ALL TO BOOTSTRAP
     -->
 
     <b-modal id="imgModal" size="lg" centered hide-footer>
       <b-img :src="imageURL" alt="Image not loaded" fluid></b-img>
     </b-modal>
 
-    <p class="h2 heading">Web Design</p>
+    <p class="h2 heading mt-5">Web Design</p>
     <rk-timeline
       v-for="(item, i) in web"
       :key="i + 'web'"
@@ -44,12 +44,13 @@
       </div>
     </rk-timeline>
 
-    <p class="h2 heading">Graphic Design</p>
+    <p class="h2 heading mt-5">Graphic Design</p>
     <rk-timeline
       v-for="(item, i) in design"
       :key="i + 'design'"
       :title="item.title"
       :description="item.description"
+
     >
       <div class="row">
         <div
@@ -70,12 +71,13 @@
       </div>
     </rk-timeline>
 
-    <p class="h2 heading">Photography</p>
+    <p class="h2 heading mt-5">Photography</p>
     <rk-timeline
       v-for="(project, i) in photos"
-      :key="i + 'photots'"
+      :key="i + 'photos'"
       :title="project.title"
       :description="project.description"
+
     >
       <div class="row">
         <div
@@ -95,6 +97,7 @@
         </div>
       </div>
     </rk-timeline>
+    <div class="spacer"></div>
   </div>
 </template>
 

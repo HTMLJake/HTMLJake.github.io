@@ -19,6 +19,7 @@
         </ul>
       </rk-timeline>
     </div>
+    <div class="spacer"></div>
   </div>
 </template>
 
@@ -81,7 +82,7 @@ export default {
           dates: "June 2016 - April 2017",
           location: "Bellevue, WA",
           description:
-            "Analyzed media queries for relavancy against a given query to improve user experience with the Bing search engine. Also performed various other tasks of relevancy judging with different guidelines.",
+            "Analyzed media queries for relevancy against a given query to improve user experience with the Bing search engine. Also performed various other tasks of relevancy judging with different guidelines.",
           list: [
             "Crafted a system to reduce repeated stress on wrist to help elevate productivity.",
             "Improved 20% in website searching for information and navigation around a web browser."
@@ -94,8 +95,8 @@ export default {
           description: `DISCLAIMER: This is not meant to be serious, the rest just feel kinda stiff and I felt like I needed to add some personality to this page. \n\nI worked at Boeing under Dell as a contractor for Apex Systems replacing batteries on the factory floor. Things didn't work out well for me or my health.`,
           list: [
             "Learned how to walk a cart around large planes in an efficient route, but not too efficient because I only have one task for that hour.",
-            "Made friends with people in the neighboring hardware department because we both didn't really have much else to do but wait for permision to do more work.",
-            "Occationally have more work then employees because its dead most of the time and get stuck replacing laptop power supplies in 3 large cabnets on wheels at once, thanks morning shift..."
+            "Made friends with people in the neighboring hardware department because we both didn't really have much else to do but wait for permission to do more work.",
+            "Occasionally have more work then employees because its dead most of the time and get stuck replacing laptop power supplies in 3 large cabinets on wheels at once, thanks morning shift..."
           ]
         }
       ]

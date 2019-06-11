@@ -28,6 +28,12 @@ $--main-font:  "Greycliff CF", -apple-system, BlinkMacSystemFont, Segoe UI, Robo
 .heading {
 	color: $primary-color;
 	font-weight: 100;
+	font-size: 4rem;
+  }
+
+  .spacer {
+	  width: 100%;
+	  height: 55px;
   }
 
 .display-1 {
