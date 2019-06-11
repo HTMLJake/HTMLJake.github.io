@@ -14,17 +14,9 @@
 
       <div class="about-text">
         <p>
-          You are probably looking at this site for one of a few reasons. Either
-          you are trying to see if I am someone you think is worth hiring, or
-          its my mom checking out my site to see how it looks. Either way I make
-          to make a good impression and hope that you like the way things look,
-          or at least maybe you will chuckle. Like when you watch those videos
-          of a cat playing the piano, its just so adorable 😍. Wait, getting off
-          topic...
-          <em>Alright jacob we gotta look professional, pull it together!</em>
-          Anyways, I look forward to hearing what you think. But really though,
-          you should go check out those cat videos. 10/10, would watch again.
-          You know what, here is a gif of it, just for you.
+          You are probably looking at this site for one of a few reasons. Either you are trying to see if I am someone you think is worth hiring, or its my mom checking out my site to see how it looks. Either way I make to make a good impression and hope that you like the way things look, or at least maybe you will chuckle. Like when you watch those videos of a cat playing the piano, its just so adorable 😍. Wait, getting off topic... <em>Alright jacob we gotta look professional, pull it together!</em> Anyways, I look forward to hearing what you think.
+
+          But really though, you should go check out those cat videos. 10/10, would watch again. You know what, here is a gif of it, just for you.
         </p>
         <img
           src="https://media.giphy.com/media/10RhccNxPSaglW/giphy.gif"
