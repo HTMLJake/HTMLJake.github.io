@@ -22,7 +22,6 @@
           of a cat playing the piano, its just so adorable 😍. Wait, getting off
           topic...
           <em>Alright jacob we gotta look professional, pull it together!</em>
-
           Anyways, I look forward to hearing what you think. But really though,
           you should go check out those cat videos. 10/10, would watch again.
           You know what, here is a gif of it, just for you.
