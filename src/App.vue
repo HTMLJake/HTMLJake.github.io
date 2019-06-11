@@ -213,11 +213,6 @@ h3 {
   box-sizing: border-box;
 }
 
-.heading {
-  color: $primary-color;
-  font-weight: 100;
-}
-
 .logo {
   max-width: 25%;
   margin: 0px;

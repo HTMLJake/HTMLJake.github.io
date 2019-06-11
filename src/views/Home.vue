@@ -5,21 +5,35 @@
         <img
           src="@/assets/images/cartoon-jacob-04.jpg"
           alt="Wizard Narwahl"
-          class="img rounded-circle"
+          class="img rounded-circle mt-3"
         />
       </div>
     </div>
     <div class="row">
-      <p class="text-center h1 font-weight-bold col-12 heading">HEY THERE!</p>
-    </div>
-    <div class="about-text">
-      <p>
-        Excuse the dust, I am in the process of updating my website to be even
-        better then it was before but that takes times. I have a few things
-        setup and working but not all of the information has been added and made
-        beautiful. If you are stumbling on this I hope you have a chance to
-        return when things are looking a little bit more polished.
-      </p>
+      <p class="text-center font-weight-bold heading w-100">HEY THERE!</p>
+
+      <div class="about-text">
+        <p>
+          You are probably looking at this site for one of a few reasons. Either
+          you are trying to see if I am someone you think is worth hiring, or
+          its my mom checking out my site to see how it looks. Either way I make
+          to make a good impression and hope that you like the way things look,
+          or at least maybe you will chuckle. Like when you watch those videos
+          of a cat playing the piano, its just so adorable 😍. Wait, getting off
+          topic...
+          <em>Alright jacob we gotta look professional, pull it together!</em>
+
+          Anyways, I look forward to hearing what you think. But really though,
+          you should go check out those cat videos. 10/10, would watch again.
+          You know what, here is a gif of it, just for you.
+        </p>
+        <img
+          src="https://media.giphy.com/media/10RhccNxPSaglW/giphy.gif"
+          alt="cat playing piano gif"
+          class="img-fluid"
+        />
+        <div class="spacer"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -27,11 +41,17 @@
 <style lang="scss" scoped>
 .home {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
-p {
-  padding: 15px;
+.heading {
+  font-size: 3em;
+  margin-bottom: 0px;
+}
+
+.spacer {
+  width: 100%;
+  height: 45px;
 }
 
 .testBackground {
@@ -45,7 +65,8 @@ p {
   max-width: 85%;
   text-align: center;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 0px;
+  white-space: pre-wrap;
 }
 
 .img {
