@@ -8,7 +8,7 @@
       </p>
     </div>
 
-    <button @click="log(getMqAsNumber())">Tester Button</button>
+    <!-- <button @click="log(getMqAsNumber())">Tester Button</button> -->
 
     <!--
     ---   TODO: Move these into a seperate vue template and load the templates instead.
