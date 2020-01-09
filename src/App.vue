@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="main-menu" style="overflow-y: hidden; height: 100vh;">
     <div class="menu-button text-light" @click="showSidebar = !showSidebar">
       <a class="oi oi-menu"></a>
     </div>
@@ -65,6 +65,9 @@
 </template>
 
 <script>
+
+/// TODO: Set scroll to top when changing between pages.
+
 export default {
   data() {
     return {
@@ -155,7 +158,7 @@ h3 {
   float: right;
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: none;
   -webkit-overflow-scrolling: touch;
   margin: 0px;
   box-sizing: border-box;
@@ -172,6 +175,8 @@ h3 {
   margin: 0px;
   padding: 15px;
   color: $--color-light;
+  overflow-y: none;
+  -webkit-overflow-scrolling: touch;
   h2 {
     font-family: $--main-font;
     color: $primary-color;

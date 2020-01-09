@@ -2,13 +2,7 @@
   <div class="container">
     <div class="row">
       <h1 class="display-1 col-12">Projects</h1>
-      <p class="col-12">
-        Nothing amazing but its all mine and I am proud of them... most of the
-        time...
-      </p>
     </div>
-
-    <!-- <button @click="log(getMqAsNumber())">Tester Button</button> -->
 
     <!--
     ---   TODO: Move these into a separate vue template and load the templates instead.
@@ -19,96 +13,35 @@
       <b-img :src="imageURL" alt="Image not loaded" fluid></b-img>
     </b-modal>
 
-    <p class="h2 heading mt-5">Web Design</p>
-    <rk-timeline
+    <div
       v-for="(item, i) in web"
       :key="i + 'web'"
       :title="item.title"
       :link="item.url"
     >
-      <div class="row">
-        <p class="text-left col-lg-7 col-12 align-middle">
+    <div class="spacer"></div>
+      <p class="h3"> {{item.title}} </p>
+      <div class="display-flex flex-row">
+        <p class="text-left align-middle">
           {{ item.description }}
         </p>
-        <div class="col-lg-4 offset-1 col-11">
           <img
-            :src="item.thumbnail.fields.file.url + '?fm=jpg&fl=progressive'"
-            :alt="item.thumbnail.fields.title"
+            :src="item.thumbnail && item.thumbnail.fields.file.url + '?fm=jpg&fl=progressive'"
+            :alt="item.thumbnail && item.thumbnail.fields.title"
             class="img"
-            style="cursor: pointer"
-            v-b-modal.imgModal
-            @click="imageURL = item.thumbnail.fields.file.url"
+            @click="imageURL = console.log(this)"
           />
-        </div>
-        <br />
       </div>
-    </rk-timeline>
-
-    <p class="h2 heading mt-5">Graphic Design</p>
-    <rk-timeline
-      v-for="(item, i) in design"
-      :key="i + 'design'"
-      :title="item.title"
-      :description="item.description"
-
-    >
-      <div class="row">
-        <div
-          class="img-column"
-          v-for="(column, i) in getColumn(item.images, getMqAsNumber())"
-          :key="i"
-        >
-          <img
-            v-for="(image, i) in column"
-            :key="i"
-            :src="image.fields.file.url + '?fm=jpg&fl=progressive'"
-            class
-            @click="imageURL = image.fields.file.url"
-            style="cursor: pointer"
-            v-b-modal.imgModal
-          />
-        </div>
-      </div>
-    </rk-timeline>
-
-    <p class="h2 heading mt-5">Photography</p>
-    <rk-timeline
-      v-for="(project, i) in photos"
-      :key="i + 'photos'"
-      :title="project.title"
-      :description="project.description"
-
-    >
-      <div class="row">
-        <div
-          class="img-column"
-          v-for="(column, i) in getColumn(project.images, getMqAsNumber())"
-          :key="i"
-        >
-          <img
-            v-for="(image, i) in column"
-            :key="i"
-            :src="image.fields.file.url + '?fm=jpg&fl=progressive'"
-            class
-            @click="imageURL = image.fields.file.url"
-            style="cursor: pointer"
-            v-b-modal.imgModal
-          />
-        </div>
-      </div>
-    </rk-timeline>
+    </div>
     <div class="spacer"></div>
   </div>
 </template>
 
 <script>
-import RkTimeline from "@/components/RkTimeline.vue";
 export default {
-  components: {
-    RkTimeline
-  },
   data() {
     return {
+      all: undefined,
       design: undefined,
       web: undefined,
       photos: undefined,
@@ -117,14 +50,19 @@ export default {
     };
   },
   beforeMount() {
-    var r = this.$CLIENT.getEntries().then(function(response) {
+    var r = this.$CLIENT.getEntries().then((response) => {
       var list = response.items.map(f => f.fields);
       var photos = list.filter(type => type.projectType == "Photography");
-      var graphicDesign = list.filter(e => e.projectType == "Graphic Design");
-      var web = list.filter(e => e.projectType == undefined);
-      return { photos, graphicDesign, web };
+      var graphicDesign = list.filter(type => type.projectType == "Graphic Design");
+      return { photos, graphicDesign };
     });
 
+    this.$CLIENT.getEntries({'content_type': 'webProjects'})
+      .then((entries)=> {
+        this.$data.web = entries.items.map((entry) => entry.fields)
+      })
+
+    r.then(r => (this.$data.all = r.all))
     r.then(r => (this.$data.design = r.graphicDesign));
     r.then(r => (this.$data.web = r.web));
     r.then(r => (this.$data.photos = r.photos));
@@ -163,8 +101,8 @@ export default {
 
   img {
     margin-top: 20px;
+    height: 55px;
     vertical-align: middle;
-    width: 100%;
   }
 }
 

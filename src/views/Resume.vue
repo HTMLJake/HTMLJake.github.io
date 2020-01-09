@@ -52,6 +52,10 @@ export default {
     RkTimeline
   },
 
+  beforeCreate() {
+    let timelineData = this.$CLIENT.getEntries()
+  },
+
   data() {
     return {
       work: [

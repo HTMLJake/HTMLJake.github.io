@@ -4,7 +4,6 @@ import router from "./router";
 import BootstrapVue from "bootstrap-vue";
 import mq from "vue-mq";
 
-import "bootstrap";
 import "./styles/custom-theme.scss";
 
 Vue.use(BootstrapVue);
@@ -19,7 +18,6 @@ var Contentful = require("contentful");
 
 Vue.config.productionTip = false;
 Vue.prototype.$SPACE_ID = "d9rh82o1q0d9";
-// eslint-disable-next-line prettier/prettier
 Vue.prototype.$ACCESS_TOKEN = "3de3971f471c5fa950eb06630300560d8a88b510d9ac40d4f966c5c54c49c8a7";
 
 const CLIENT = Contentful.createClient({
