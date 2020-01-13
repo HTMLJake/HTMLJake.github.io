@@ -21,16 +21,16 @@
     >
     <div class="spacer"></div>
       <p class="h3"> {{item.title}} </p>
+        <a v-if="item.url" :href="item.url">{{item.url}}</a>
       <div class="display-flex flex-row">
         <p class="text-left align-middle">
           {{ item.description }}
         </p>
-          <img
-            :src="item.thumbnail && item.thumbnail.fields.file.url + '?fm=jpg&fl=progressive'"
-            :alt="item.thumbnail && item.thumbnail.fields.title"
-            class="img"
-            @click="imageURL = console.log(this)"
-          />
+        <img
+          :src="item.thumbnail && item.thumbnail.fields.file.url + '?fm=jpg&fl=progressive'"
+          :alt="item.thumbnail && item.thumbnail.fields.title"
+          class="img"
+        />
       </div>
     </div>
     <div class="spacer"></div>
